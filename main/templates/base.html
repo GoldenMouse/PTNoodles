@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300,400,400i,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:300,400,500,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+
+        <link rel="stylesheet" href="{% static "css/styles.css" %}">
+
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <nav class="nav-mobile navs">
+            <ul>
+                <li><a href="#">info</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">menus</a></li>
+                <li><a href="#">locations</a></li>
+                <li><a href="#">private events</a></li>
+                <li><a href="#">press</a></li>
+                <li><a href="#">reservations</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <div class="hamburger">
+                <div class="hamburger__bar1"></div>
+                <div class="hamburger__bar2"></div>
+                <div class="hamburger__bar3"></div>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar__desktop">
+                    <header class="logo">
+                        <div class="logo__main">
+                            PT NOODLES
+                        </div>
+                        <div class="logo__sub">
+                            Vietnamese Restaurant
+                        </div>
+                    </header>
+
+                    <div class="emblem">
+                        <a href="{% url "index" %}">
+                            <img 
+                                src="https://s3-us-west-2.amazonaws.com/mwee-images/pt-logo-emblem-only-white.png" class="emblem"
+                            />
+                        </a>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-info__addr">
+                            <a href="#">1590 Second Ave, New York, NY</a>
+                        </div>
+                        <div class="contact-info__phone">
+                            <a href="#">669.224.0316</a>
+                        </div>
+                    </div>
+
+                    <nav class="navs" id="main-navs">
+                        <ul>
+                            <li><a href="{% url "play" %}">info</a></li>
+                            <li><a href="#">contact</a></li>
+                            <li><a href="#" id="navs__link--menus">menus</a></li>
+                            <li><a href="#" id="navs__link--locations">locations</a></li>
+                            <li><a href="#">private events</a></li>
+                            <li><a href="#">press</a></li>
+                            <li><a href="#">reservations</a></li>
+                        </ul>
+                    </nav>
+
+                    <nav class="navs--menus hidden">
+                        <h2 class="navs--menus__heading">Menus</h2>
+                        <ul>
+                            <li><a href="{% url 'menus' location="avondale" %}">Avondale</a></li>
+                            <li><a href="#">Surprise</a></li>
+                            <li><a href="#">Goodyear</a></li>
+                            <li><a href="#">Phoenix</a></li>
+                            <li>
+                                <a href="#">
+                                    <i class="far fa-arrow-alt-circle-left back-arrow"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="social">
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fab fa-facebook-f circular"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-instagram circular"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-envelope circular"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
+                </div>
+
+                <div class="sidebar__mobile">
+                    <div class="emblem">
+                        <img 
+                            src="https://s3-us-west-2.amazonaws.com/mwee-images/pt-logo-emblem-only-white.png" class="emblem"
+                        />
+                    </div>
+                    <div class="logo__mobile">PT NOODLE</div>
+
+                    
+                </div>
+
+                <div class="footer">
+                    <h4><a href="#">Call now to order</a></h4>
+                </div>
+            </div>
+
+            <!------------------------ 
+                MAIN RIGHT CONTENT
+            ------------------------>
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div>
+            
+        </div>
+        
+        <script type="text/javascript" src="{% static "js/live.js" %}"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

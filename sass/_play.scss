@@ -1,0 +1,32 @@
+#play {
+    height: 100%;
+    display: grid;
+    grid-template-columns:  [full-start] 5rem [center-start] 
+                            repeat(9, [col-start] minmax(min-content, 15rem) [col-end]) 
+                            [center-end] 5rem [full-end];
+    grid-template-rows: 30vh min-content auto;
+    
+    background-color: grey;
+    
+    .banner {
+        background-color: gold;
+        grid-column: full-start / full-end;
+    }
+    
+    .navs {
+        background-color: green;
+        grid-column: center-start / center-end;
+    }
+    
+    .menu {
+        &__left {
+           background-color: magenta;     
+           grid-column: col-start 1 / span 4;
+        }
+        
+        &__right {
+           background-color: violet;     
+           grid-column: col-start 6 / span 4;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+argh==0.26.2
+beautifulsoup4==4.6.3
+Django==2.1.2
+django-livereload-server==0.3.2
+pathtools==0.1.2
+pytz==2018.5
+PyYAML==3.13
+six==1.11.0
+tornado==4.5.1
+watchdog==0.9.0
+websocket-client==0.53.0

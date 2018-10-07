@@ -1,0 +1,58 @@
+.hidden {
+    opacity: 0 !important;
+    height: 0;
+    overflow: hidden;
+
+}
+
+
+/** Hamburger **/
+.hamburger{
+    display: none;
+
+    
+    @media only screen and (max-width: $bp-medium) {
+        display: inline-block;
+        position: fixed;
+        top: 1rem;
+        right: 2rem;
+        cursor: pointer;
+        z-index: 3000;
+
+        &__bar1, 
+        &__bar2,
+        &__bar3 {
+            display: block;
+            width: 3.5rem;
+            height: 0.5rem;
+            background-color: var(--color-text-primary);
+            margin: 0.6rem auto;
+            transition: 0.4s 
+        }
+    }
+}
+
+
+/* Rotate first bar */
+.change .hamburger__bar1 {
+    -webkit-transform: translateY(1.1rem) rotateZ(45deg);
+   -moz-transform: translateY(1.1rem) rotateZ(45deg);
+   -ms-transform: translateY(1.1rem) rotateZ(45deg);
+   -o-transform: translateY(1.1rem) rotateZ(45deg);
+   transform: translateY(1.1rem) rotateZ(45deg);
+}
+
+/* Fade out the second bar */
+.change .hamburger__bar2  {
+    width: 0;
+}
+
+/* Rotate last bar */
+.change .hamburger__bar3 {
+    -webkit-transform: translateY(-1.1rem) rotateZ(-45deg);
+   -moz-transform: translateY(-1.1rem) rotateZ(-45deg);
+   -ms-transform: translateY(-1.1rem) rtateZ(-45deg);
+   -o-transform: translateY(-1.1rem) rotateZ(-45deg);
+   transform: translateY(-1.1rem) rotateZ(-45deg);
+}
+

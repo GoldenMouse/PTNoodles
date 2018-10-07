@@ -1,0 +1,55 @@
+/*
+
+COLORS
+
+*/
+
+:root {
+    --color-text-light: #eceadd; 
+    --color-text-dark : #243747;
+    --color-text-primary: #b3545b;
+    --color-text-gold: #c59d5f;
+    --color-bg-light: #eceadd;
+    --color-bg-light-hover: #f6f5ef; 
+    --color-bg-dark: #243747;
+    --color-bg-primary: #b3545b;
+    --color-bg-rose: #f3e8d8;
+}
+
+$bp-medium: 48em; // 768px iPad and under
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5% // 1 rem = 10px => 10px/16px = 62.5%
+}
+
+body {
+    font-family: "Work Sans", "sans-serif";
+    font-weight: 400;
+    background-color: var(--color-bg-light);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-light);
+    transition: all .1s ease-in-out 0s;
+
+    &:hover {
+        color: var(--color-text-primary);
+    }
+}

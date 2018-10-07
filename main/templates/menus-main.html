@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="banner">
+    <div class="slider">
+        <div 
+            class="slider__img slider__img--dimmer" 
+            style="background-image: url(https://images.pexels.com/photos/699544/pexels-photo-699544.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+        </div>
+        <div 
+            class="slider__img slider__img--dimmer"
+            style="background-image: url(https://images.pexels.com/photos/1265626/pexels-photo-1265626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+        </div>
+        <div 
+            class="slider__img slider__img--dimmer" 
+            style="background-image: url(https://images.pexels.com/photos/929192/pexels-photo-929192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+        </div>
+    
+        <div class="slider__btns">
+            <button class="slider__btns--left" onclick="plusDivs(-1)">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                
+            </button>
+            <button class="slider__btns--right" onclick="plusDivs(1)">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </div>
+    
+    
+        <div class="slider__title">
+            <div class="slider__title--main">Menu</div>
+            <div class="slider__title--sub">Avondale</div>
+        </div>
+    </div>
+    </div>
+    
+    <div id="menu-main" class="main">
+    <div class="menu-nav">
+        <a href="#menu-main" id="menu-appetizer-btn" class="menu-nav__links">Appetizer</a>
+        <a href="#menu-main" id="menu-entrees-btn" class="menu-nav__links selected">Entrees</a>
+        <a href="#menu-main" id="menu-drinks-btn" class="menu-nav__links">Drinks</a>
+        <a href="#menu-main" id="menu-dessert-btn" class="menu-nav__links">Dessert</a>
+    </div>
+    
+    <div class="menu-content">
+        {% include "includes/menus-main_entrees.html" %}
+        
+        {% include "includes/menus-main_appetizer.html" %}
+        
+        {% include "includes/menus-main_drinks.html" %}
+        
+        {% include "includes/menus-main_dessert.html" %}
+    </div>
+</div>
+{% endblock %}
+
+        
+{% block scripts %}
+    <script src="{% static "js/index.js" %}"></script>
+    <script src="{% static "js/menus.js" %}"></script>
+{% endblock %}
