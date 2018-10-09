@@ -56,3 +56,33 @@
    transform: translateY(-1.1rem) rotateZ(-45deg);
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-40%);
+  background-color: var(--color-bg-rose);
+  margin: 0 !important;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  box-shadow: 5px 0px 5px #888888;
+  z-index: 6;
+}
+
+.sticky + #content {
+  padding-top: 60px;
+}
+
+.tag {
+    &__new {
+        background-color: var(--color-bg-accent);
+        color: var(--color-bg-light);
+        padding: 0.2rem 1rem;
+        font-size: 1.4rem;
+        margin-left: 1rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        position: absolute;
+    }
+}

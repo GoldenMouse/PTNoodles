@@ -1,6 +1,6 @@
 .banner {
     flex: 0;
-    min-height: 15vw;
+    min-height: 50vh;
     width: 100%;
     display: flex;
     filter: brightness(90%);
@@ -33,6 +33,7 @@
     align-items: baseline   ;
     flex-wrap: wrap;
     margin-top: 3rem;
+    animation-duration: 2s;
 
 
     &__links {
@@ -302,4 +303,26 @@ ul.drinks-grid {
     grid-column-gap: 0;
     width: 70%;
     margin-left: 3rem;
+}
+
+.download-pdf {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--color-text-dark);
+    font-family: "Roboto Condensed", "sans-serif";
+    font-style: italic;
+    margin: 3rem;
+    
+    & i {
+        margin: 0 1rem;
+    }
+    
+    & a {
+        color: var(--color-text-dark);
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
 }

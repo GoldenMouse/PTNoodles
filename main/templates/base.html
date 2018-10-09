@@ -17,6 +17,8 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
 
+         <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="{% static "css/styles.css" %}">
 
         <title>{% block title %}{% endblock %}</title>
@@ -34,7 +36,7 @@
                 <li><a href="#">reservations</a></li>
             </ul>
         </nav>
-
+        
         <div class="container">
             <div class="hamburger">
                 <div class="hamburger__bar1"></div>
@@ -79,15 +81,34 @@
                             <li><a href="#">press</a></li>
                             <li><a href="#">reservations</a></li>
                         </ul>
+                        
+                        <div class="social">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f circular"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-instagram circular"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-envelope circular"></i></a>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
 
-                    <nav class="navs--menus hidden">
+                    <nav class="navs--menus animated slideInLeft hidden">
                         <h2 class="navs--menus__heading">Menus</h2>
                         <ul>
                             <li><a href="{% url 'menus' location="avondale" %}">Avondale</a></li>
-                            <li><a href="#">Surprise</a></li>
-                            <li><a href="#">Goodyear</a></li>
-                            <li><a href="#">Phoenix</a></li>
+                            <li><a href="{% url 'menus' location="surprise" %}">Surprise</a></li>
+                            <li><a href="{% url 'menus' location="goodyear" %}">Goodyear</a></li>
+                            <li>
+                                <a href="{% url 'menus' location="phoenix" %}">
+                                    Phoenix
+                                    <span class="tag__new">New</span>
+                                </a>
+                            </li>
                             <li>
                                 <a href="#">
                                     <i class="far fa-arrow-alt-circle-left back-arrow"></i>
@@ -96,19 +117,7 @@
                         </ul>
                     </nav>
 
-                    <div class="social">
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fab fa-facebook-f circular"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-instagram circular"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-envelope circular"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                   
 
                     
                 </div>
@@ -132,7 +141,7 @@
             <!------------------------ 
                 MAIN RIGHT CONTENT
             ------------------------>
-            <div class="content">
+            <div id="content" class="content">
                 {% block content %}{% endblock %}
             </div>
             

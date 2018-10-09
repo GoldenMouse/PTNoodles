@@ -10,10 +10,19 @@ COLORS
     --color-text-primary: #b3545b;
     --color-text-gold: #c59d5f;
     --color-bg-light: #eceadd;
+    //--color-bg-light: #feffff;
     --color-bg-light-hover: #f6f5ef; 
     --color-bg-dark: #243747;
+    //--color-bg-dark: #feffff; //#1a1a1a;
     --color-bg-primary: #b3545b;
     --color-bg-rose: #f3e8d8;
+    --color-bg-accent: #00a652;
+    
+    /*** PSD Colrs ***/
+    --color-bg--black: #000000;
+    --color-bg--green: #00a652;
+    --color-bg--red: #ed1c22;
+    
 }
 
 $bp-medium: 48em; // 768px iPad and under
