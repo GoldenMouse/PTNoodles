@@ -17,4 +17,8 @@ def menus(request, location):
         return render(request, "menus-main.html", context)
     else:
         return HttpResponse("Location not found.", status=404)
+        
+        
+def locations(request):
+    return render(request, "locations.html", {})
 

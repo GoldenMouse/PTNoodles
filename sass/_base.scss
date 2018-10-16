@@ -8,6 +8,7 @@ COLORS
     --color-text-light: #eceadd; 
     --color-text-dark : #243747;
     --color-text-primary: #b3545b;
+    --color-text-primary-bright: #d43540;
     --color-text-gold: #c59d5f;
     --color-bg-light: #eceadd;
     //--color-bg-light: #feffff;
@@ -15,6 +16,7 @@ COLORS
     --color-bg-dark: #243747;
     //--color-bg-dark: #feffff; //#1a1a1a;
     --color-bg-primary: #b3545b;
+    --color-bg-primary-bright: #d43540;
     --color-bg-rose: #f3e8d8;
     --color-bg-accent: #00a652;
     
@@ -25,7 +27,9 @@ COLORS
     
 }
 
+$bp-small: 30em; // 480px iPad and under
 $bp-medium: 48em; // 768px iPad and under
+$bp-large: 77em; // 1230px 
 
 * {
     padding: 0;
@@ -40,7 +44,11 @@ $bp-medium: 48em; // 768px iPad and under
 
 html {
     box-sizing: border-box;
-    font-size: 62.5% // 1 rem = 10px => 10px/16px = 62.5%
+    font-size: 62.5%; // 1 rem = 10px => 10px/16px = 62.5%
+    
+    @media only screen and (max-width: $bp-small) {
+        font-size: 50%; // 1 rem = 10px => 10px/16px = 62.5%
+    }
 }
 
 body {

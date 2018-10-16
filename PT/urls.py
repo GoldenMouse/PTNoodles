@@ -21,6 +21,7 @@ urlpatterns = [
      # GET
     path('', views.index, name='index'),
     path('menus/<location>/', views.menus, name='menus'),
+    path('locations', views.locations, name='locations'),
     path('play', views.play, name='play'),
     
     path('admin/', admin.site.urls),
