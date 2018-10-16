@@ -14,6 +14,7 @@ COLORS
     //--color-bg-light: #feffff;
     --color-bg-light-hover: #f6f5ef; 
     --color-bg-dark: #243747;
+    --color-bg-dark-lighter: #334f66;
     //--color-bg-dark: #feffff; //#1a1a1a;
     --color-bg-primary: #b3545b;
     --color-bg-primary-bright: #d43540;
@@ -45,10 +46,6 @@ $bp-large: 77em; // 1230px
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 1 rem = 10px => 10px/16px = 62.5%
-    
-    @media only screen and (max-width: $bp-small) {
-        font-size: 50%; // 1 rem = 10px => 10px/16px = 62.5%
-    }
 }
 
 body {

@@ -12,6 +12,7 @@ COLORS
   --color-bg-light: #eceadd;
   --color-bg-light-hover: #f6f5ef;
   --color-bg-dark: #243747;
+  --color-bg-dark-lighter: #334f66;
   --color-bg-primary: #b3545b;
   --color-bg-primary-bright: #d43540;
   --color-bg-rose: #f3e8d8;
@@ -33,9 +34,6 @@ COLORS
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
-  @media only screen and (max-width: 30em) {
-    html {
-      font-size: 50%; } }
 
 body {
   font-family: "Work Sans", "sans-serif";
@@ -199,6 +197,7 @@ a {
     bottom: 0;
     left: 0;
     right: 0;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; }
@@ -290,6 +289,20 @@ a {
     position: absolute;
     top: 50;
     right: 50; }
+
+.circular {
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  padding-top: 0.8rem;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  font-weight: 600; }
+  .circular:hover {
+    color: var(--color-text-light);
+    background-color: var(--color-bg-primary); }
 
 .btn {
   cursor: pointer;
@@ -799,20 +812,27 @@ div#locations {
     .card#phoenix {
       padding-top: 1rem; } }
 
-.tag-card-new {
-  right: 2rem;
-  top: 0.8rem;
+.tag-card {
+  right: 0;
+  top: -3.7rem;
   font-size: 2rem; }
+  .tag-card.open-soon {
+    background-color: var(--color-bg-primary-bright); }
 
-.tag-card-open-soon {
-  left: 50%;
-  bottom: 7rem;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  background-color: var(--color-bg-primary-bright); }
-  @media only screen and (max-width: 30em) {
-    .tag-card-open-soon {
-      font-size: 1.7rem; } }
+.card__social {
+  position: absolute;
+  right: 0;
+  margin: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end; }
+  .card__social--icons {
+    color: var(--color-text-dark);
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 1.8rem; }
+    .card__social--icons:hover {
+      color: var(--color-text-primary); }
 
 #play {
   height: 100%;
