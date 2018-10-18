@@ -1,5 +1,8 @@
+import os
+
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.conf import settings
 
 LOCATIONS = ['avondale', 'goodyear', 'surprise', 'phoenix']
 
@@ -22,3 +25,11 @@ def menus(request, location):
 def locations(request):
     return render(request, "locations.html", {})
 
+def gallery(request):
+    
+    images_dir = os.path.join(settings.BASE_DIR, "main/static/img/gallery")
+    images = os.listdir(images_dir)
+    
+    context = { 'images': images }
+    
+    return render(request, "gallery.html", context) 

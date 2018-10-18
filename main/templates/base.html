@@ -17,14 +17,18 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
 
-         <link rel="stylesheet"
+        <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        
         <link rel="stylesheet" href="{% static "css/styles.css" %}">
 
+        {% block head %}{% endblock%}
         <title>{% block title %}{% endblock %}</title>
     </head>
 
     <body>
+        {% block modal %}{% endblock %}
         <nav class="nav-mobile navs">
             <ul>
                 <li><a href="#">info</a></li>
@@ -75,7 +79,7 @@
                         <ul>
                             <li><a href="{% url "locations" %}" id="navs__link--locations">locations</a></li>
                             <li><a href="#" id="navs__link--menus">menus</a></li>
-                            <li><a href="#">gallery</a></li>
+                            <li><a href="{% url "gallery" %}">gallery</a></li>
                             <li><a href="{% url "play" %}">contact</a></li>
                             <li><a href="#">reservations</a></li>
                         </ul>
@@ -145,7 +149,16 @@
             
         </div>
         
+        <!---------------- SCRIPTS ------------>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            document.getElementById("content").addEventListener("scroll", function(){
+                AOS.init();
+            });
+        </script>
+        
         <script type="text/javascript" src="{% static "js/live.js" %}"></script>
         {% block scripts %}{% endblock %}
+        <!--------- END SCRIPTS --------------->
     </body>
 </html>

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block modal %}
+<!-- The Modal/Lightbox -->
+<div id="lightbox" class="lightbox">
+    <div id="lightbox__close" class="lightbox__close">&times;</div>
+    
+    <div class="lightbox__content">
+        {% for image in images %}
+            <div class="lightbox__slide">
+                <div class="lightbox__count">{{ forloop.counter }} / {{ images | length }}</div>
+                <img src="{% static '/img/gallery/'|add:image' %}" 
+                     name="{{ image }"
+                     alt="gallery image">
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Next/previous controls -->
+    <a class="lightbox__prev">&#10094;</a>
+    <a class="lightbox__next">&#10095;</a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="banner">
+    <div class="slider">
+        <div 
+            class="slider__img slider__img--dimmer" 
+            style="background-image: url(https://images.pexels.com/photos/899018/pexels-photo-899018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+        </div>
+    
+        <div class="slider__title">
+            <div class="slider__title--main">Gallery</div>
+        </div>
+    </div>
+</div>
+
+<div id="gallery">
+    {% for image in images %}
+        <!--
+        <div data-aos="fade" 
+            data-aos-offset="-50"
+            data-aos-easing="ease-in-out" 
+            data-aos-duration="500"
+            data-img-count="{{ forloop.counter }}"
+        ---->
+        <div data-img-count="{{ forloop.counter }}"
+            
+        {% if forloop.counter|divisibleby:4 %}
+            class="gallery__item tall ">
+        {% elif forloop.counter|divisibleby:6 %} 
+            class="gallery__item big">
+        {% else %}
+            class="gallery__item">
+        {% endif %}
+                <img src="{% static "/img/gallery/"|add:image %}" 
+                     alt="gallery image" 
+                     name="{{ image }}" />
+            </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+        
+{% block scripts %}
+    <script src="{% static "js/index.js" %}"></script>
+    <script src="{% static "js/gallery.js" %}"></script>
+{% endblock %}
