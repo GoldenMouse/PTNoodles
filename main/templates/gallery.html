@@ -50,13 +50,14 @@
         <div data-img-count="{{ forloop.counter }}"
             
         {% if forloop.counter|divisibleby:4 %}
-            class="gallery__item tall ">
+            class="gallery__item tall">
         {% elif forloop.counter|divisibleby:6 %} 
             class="gallery__item big">
         {% else %}
             class="gallery__item">
         {% endif %}
-                <img src="{% static "/img/gallery/"|add:image %}" 
+                <img data-src="{% static "/img/gallery/"|add:image %}" 
+                     class="lazyload"
                      alt="gallery image" 
                      name="{{ image }}" />
             </div>
@@ -67,6 +68,7 @@
 
         
 {% block scripts %}
+    <script src="{% static "js/vendor/lazysizes.min.js" %}" async=""></script>
     <script src="{% static "js/index.js" %}"></script>
     <script src="{% static "js/gallery.js" %}"></script>
 {% endblock %}

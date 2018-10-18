@@ -28,8 +28,9 @@ COLORS
     
 }
 
-$bp-small: 30em; // 480px iPad and under
-$bp-medium: 48em; // 768px iPad and under
+$bp-small: 30em; // 480px iPhone
+//$bp-medium: 48em; // 768px iPad Pro
+$bp-medium: 64em; // 1024px iPad Pro
 $bp-large: 77em; // 1230px 
 
 * {

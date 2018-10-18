@@ -43,13 +43,14 @@ var NS = (function(){
     
     function showSlide(n) {
         var slides = document.getElementsByClassName("lightbox__slide");
+        console.log(n);
         
         for (var i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
         
-        if (n > slides.length) {n = 1}
-        if (n <= 0) {n = slides.length + n}
+        if (n > slides.length) {n = CurrentSlide = 1}
+        else if (n <= 0) {n = CurrentSlide = slides.length + n}
         slides[n-1].style.display = "block";
     }
 
