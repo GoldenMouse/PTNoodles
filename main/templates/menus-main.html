@@ -8,22 +8,22 @@
         {% if location == 'avondale' %}
         <div 
             class="slider__img slider__img--dimmer" 
-            style="background-image: url(https://images.pexels.com/photos/699544/pexels-photo-699544.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+            style="background-image: url({% static 'img/avondale-menu-hero.jpeg' %})">
         </div>
         {% elif location == 'goodyear' %} 
         <div 
             class="slider__img slider__img--dimmer"
-            style="background-image: url(https://images.pexels.com/photos/1265626/pexels-photo-1265626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+            style="background-image: url({% static 'img/goodyear-menu-hero.jpeg' %})">
         </div>
-        {% elif location == 'camelback' %}
+        {% elif location == 'surprise' %}
         <div 
             class="slider__img slider__img--dimmer" 
-            style="background-image: url(https://images.pexels.com/photos/929192/pexels-photo-929192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+            style="background-image: url({% static 'img/surprise-menu-hero.jpeg' %})">
         </div>
         {% elif location == 'phoenix' %}
         <div 
             class="slider__img slider__img--dimmer" 
-            style="background-image: url(https://images.pexels.com/photos/357809/pexels-photo-357809.jpeg?cs=srgb&dl=appetizer-asian-asian-food-357809.jpg&fm=jpg)">
+            style="background-image: url({% static 'img/phoenix-menu-hero.jpeg' %})">
         </div>
         {% endif %}
     

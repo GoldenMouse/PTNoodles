@@ -1,0 +1,82 @@
+.contactus {
+    color: var(--color-text-dark);
+    margin: 4rem 4rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    
+    &__header {
+        margin: 5rem;
+        text-transform: uppercase;
+        font-size: 3rem;
+        letter-spacing: 0.2rem;
+        font-weight: 800;
+        font-family: "Work Sans", "sans-serif";
+    }
+    
+}
+
+.contactus__form {
+    color: var(--color-text-primary);
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10rem, 1fr);
+    grid-template-areas: 'f f l l l'
+                         'e e e e e'
+                         'p p p p p'
+                         'm m m m m'
+                         '. . s . .';
+    
+    & input, 
+    & textarea {
+        background-color: #fff;
+        border: none;
+        padding: 1rem;
+        line-height: 1.5;
+        font-size: 1.6rem;
+        width: 100%;
+        font-family: "Roboto Condensed", "sans-serif";
+    }
+    
+    & label {
+        display: inline-block;
+        color: var(--color-text-dark);
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+        font-weight: 500;
+        
+        &::after {
+            content: ' \2731';
+            vertical-align: super;
+            font-size: 0.8rem;
+        }
+    }
+    &--firstName {
+        grid-area: f;
+    }
+    
+    &--lastName {
+        grid-area: l;
+    }
+    
+    &--email {
+        grid-area: e;
+    }
+    
+    &--phone {
+        grid-area: p;
+        
+        & label::after {
+            content: '';
+        }
+    }
+    
+    &--message {
+        grid-area: m;
+    }
+    
+    &--submit{
+        grid-area: s;
+    }
+}

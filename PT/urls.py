@@ -23,6 +23,7 @@ urlpatterns = [
     path('menus/<location>/', views.menus, name='menus'),
     path('locations', views.locations, name='locations'),
     path('gallery', views.gallery, name='gallery'),
+    path('contact', views.contact, name='contact'),
     path('play', views.play, name='play'),
     
     path('admin/', admin.site.urls),

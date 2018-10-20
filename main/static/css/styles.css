@@ -837,7 +837,8 @@ div#locations {
       color: var(--color-text-primary); }
 
 #gallery {
-  margin: 8rem 4%;
+  padding-top: 2rem;
+  margin: 5rem 4% 0 4%;
   display: grid;
   grid-column-gap: 3rem;
   grid-template-columns: repeat(4, 1fr);
@@ -962,6 +963,89 @@ div#locations {
     color: white; }
 
 /** End Lightbox ***/
+/***** Paginator *****/
+.paginator--top {
+  padding-top: 5rem; }
+
+.paginator--bottom {
+  padding: 5rem; }
+
+.paginator {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  height: 100%;
+  width: 100%; }
+  .paginator a, .paginator__disabled, .paginator__active {
+    color: var(--color-text-light);
+    background-color: var(--color-text-dark);
+    padding: 1rem 2rem;
+    border: 1px solid var(--color-text-dark); }
+  .paginator__active,
+  .paginator a:hover {
+    color: var(--color-text-dark);
+    background-color: var(--color-text-rose); }
+  .paginator li {
+    display: inline; }
+  .paginator span {
+    margin-right: 0.5rem;
+    padding: 1rem 1.8rem; }
+
+.contactus {
+  color: var(--color-text-dark);
+  margin: 4rem 4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  .contactus__header {
+    margin: 5rem;
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    font-weight: 800;
+    font-family: "Work Sans", "sans-serif"; }
+
+.contactus__form {
+  color: var(--color-text-primary);
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(10rem, 1fr);
+  grid-template-areas: 'f f l l l' 'e e e e e' 'p p p p p' 'm m m m m' '. . s . .'; }
+  .contactus__form input,
+  .contactus__form textarea {
+    background-color: #fff;
+    border: none;
+    padding: 1rem;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    width: 100%;
+    font-family: "Roboto Condensed", "sans-serif"; }
+  .contactus__form label {
+    display: inline-block;
+    color: var(--color-text-dark);
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+    font-weight: 500; }
+    .contactus__form label::after {
+      content: ' \2731';
+      vertical-align: super;
+      font-size: 0.8rem; }
+  .contactus__form--firstName {
+    grid-area: f; }
+  .contactus__form--lastName {
+    grid-area: l; }
+  .contactus__form--email {
+    grid-area: e; }
+  .contactus__form--phone {
+    grid-area: p; }
+    .contactus__form--phone label::after {
+      content: ''; }
+  .contactus__form--message {
+    grid-area: m; }
+  .contactus__form--submit {
+    grid-area: s; }
+
 #play {
   height: 100%;
   display: grid;

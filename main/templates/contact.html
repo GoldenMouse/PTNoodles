@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!--
+<div class="banner">
+    <div class="slider">
+        <div 
+            class="slider__img slider__img--dimmer" 
+            style="background-image: url({% static 'img/gallery-hero.jpeg' %})">
+        </div>
+    
+        <div class="slider__title">
+            <div class="slider__title--main">Gallery</div>
+        </div>
+    </div>
+</div>
+-->
+
+<div id="contactus" class="contactus">
+    <h1 class="contactus__header">Contact Us</h1> 
+    
+    <div class="contactus__info"></div>
+    
+    <form id="ContactForm" method=post class="contactus__form">
+        {% csrf_token %}
+        <div class="contactus__form--firstName">
+            {{ form.firstName.label_tag }}
+            {{ form.firstName }}
+            {{ form.firstName.errors }}
+        </div>
+        <div class="contactus__form--lastName">
+            {{ form.lastName.label_tag }}
+            {{ form.lastName }}
+            {{ form.lastName.errors }}
+        </div>
+        <div class="contactus__form--email">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {{ form.email.errors }}
+        </div>
+        <div class="contactus__form--phone">
+            {{ form.phone.label_tag }}
+            {{ form.phone }}
+            {{ form.phone.errors }}
+        </div>
+        <div class="contactus__form--message">
+            {{ form.message.label_tag }}
+            {{ form.message }}
+            {{ form.message.errors }}
+        </div>
+        <input type="submit" value="Send" class="contactus__form--submit btn"/>
+    </form>
+   
+</form>
+    
+</div>
+   
+{% endblock %}
+
+        
+{% block scripts %}
+{% endblock %}

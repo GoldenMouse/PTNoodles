@@ -1,0 +1,25 @@
+<div class="paginator">
+    {% if images.has_other_pages %}
+      <ul class="paginator__ul">
+        {% if images.has_previous %}
+          <li><a href="?page={{ images.previous_page_number }}#paginator--anchor">&laquo;</a></li>
+        {% else %}
+          <li><span class="paginator__disabled">&laquo;</span></li>
+        {% endif %}
+        
+        {% for i in images.paginator.page_range %}
+          {% if images.number == i %}
+            <li><span class="paginator__active">{{ i }} <span class="sr-only">(current)</span></span></li>
+          {% else %}
+            <li><a href="?page={{ i }}#paginator--anchor">{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+        
+        {% if images.has_next %}
+          <li><a href="?page={{ images.next_page_number }}#paginator--anchor">&raquo;</a></li>
+        {% else %}
+          <li><span class="paginator__disabled">&raquo;</span></li>
+        {% endif %}
+      </ul>
+    {% endif %}
+</div>

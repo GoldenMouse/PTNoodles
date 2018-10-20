@@ -29,7 +29,7 @@
     <div class="slider">
         <div 
             class="slider__img slider__img--dimmer" 
-            style="background-image: url(https://images.pexels.com/photos/899018/pexels-photo-899018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+            style="background-image: url({% static 'img/gallery-hero.jpeg' %})">
         </div>
     
         <div class="slider__title">
@@ -37,6 +37,14 @@
         </div>
     </div>
 </div>
+
+<div id="paginator--anchor" style="padding:0.1rem"></div>
+
+<!-- Paginator --->
+<div class="paginator--top">
+    {% include "includes/gallery-paginator.html" %}
+</div>
+
 
 <div id="gallery">
     {% for image in images %}
@@ -63,6 +71,13 @@
             </div>
     {% endfor %}
 </div>
+
+
+<!-- Paginator --->
+<div class="paginator--bottom">
+    {% include "includes/gallery-paginator.html" %}
+</div>
+
 
 {% endblock %}
 

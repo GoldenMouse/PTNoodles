@@ -3,6 +3,10 @@ import os
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponseRedirect
+
+from .forms import ContactForm
 
 LOCATIONS = ['avondale', 'goodyear', 'surprise', 'phoenix']
 
@@ -30,6 +34,34 @@ def gallery(request):
     images_dir = os.path.join(settings.BASE_DIR, "main/static/img/gallery")
     images = os.listdir(images_dir)
     
-    context = { 'images': images }
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(images, 20)
+    
+    try:
+        images_per_page = paginator.page(page)
+    except PageNotAnInteger:
+        images_per_page = paginator.page(1)
+    except EmptyPage:
+        images_per_page = paginator.page(paginator.num_pages)
+
+    
+    context = { 'images': images_per_page }
     
     return render(request, "gallery.html", context) 
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect('/thanks/')
+
+    # 
+    else:
+        form = ContactForm(label_suffix="")
+
+    context = {
+        'form': form
+    }
+    return render(request, "contact.html", context)
