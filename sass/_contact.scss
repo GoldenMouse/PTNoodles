@@ -1,19 +1,52 @@
 .contactus {
     color: var(--color-text-dark);
-    margin: 4rem 4rem;
+    background-color: var(--color-bg-rose);
+    padding: 4rem 4rem;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     
     &__header {
-        margin: 5rem;
+        margin-top: 3rem;
+        margin-bottom: 4rem;
         text-transform: uppercase;
-        font-size: 3rem;
+        font-size: 4rem;
         letter-spacing: 0.2rem;
         font-weight: 800;
         font-family: "Work Sans", "sans-serif";
     }
     
+    &__info {
+        margin-bottom: 5rem;
+    }
+    
+}
+
+.contactus__info{
+    &--line {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0.8rem 0;
+        font-size: 1.5rem;
+        font-family: "Roboto Condensed", "sans-serif";
+    }
+    &--icon {
+        font-size: 1.5rem;
+        margin: 0 2rem;
+        height: 100%;
+    }
+    &--detail{
+        color: var(--color-text-primary);
+        
+        & > a {
+            color: var(--color-text-primary);
+        
+            &:hover {
+                text-decoration: underline;
+            }       
+        }
+    }
 }
 
 .contactus__form {
@@ -27,12 +60,22 @@
                          'p p p p p'
                          'm m m m m'
                          '. . s . .';
+                         
+    
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-areas: 'f f f f f'
+                             'l l l l l'
+                             'e e e e e'
+                             'p p p p p'
+                             'm m m m m'
+                             '. . s . .';
+    }
     
     & input, 
     & textarea {
         background-color: #fff;
         border: none;
-        padding: 1rem;
+        padding: 1.4rem;
         line-height: 1.5;
         font-size: 1.6rem;
         width: 100%;
@@ -78,5 +121,24 @@
     
     &--submit{
         grid-area: s;
+        margin-bottom: 5rem;
     }
+}
+
+.contactus__submitted {
+    margin: 3rem;
+    text-align: center;
+    position: relative;
+    top: 20%;
+    &--title {
+        font-size: 2rem;
+        color: var(--color-text-dark);
+    }
+    
+    &--check {
+        font-size: 10rem;
+        color: green;
+        padding: 4rem 0;
+    }
+    
 }

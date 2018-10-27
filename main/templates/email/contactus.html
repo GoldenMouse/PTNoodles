@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PT NOODLES: Contact-Us Inquiry</title>
+        <style>
+            h1 {
+                font-size: 20px;
+            }
+            h1, footer {
+                color: #2f2f2f;
+            }
+            table {
+                border-collapse: collapse;
+                width: 70%;
+                margin: 0 auto;
+            }
+            th {
+                width: 150px;
+                vertical-align: top;
+            }
+            th, td {
+                text-align: left;
+                padding: 8px;
+                padding-left: 10px;
+                border: 1px solid #243747;
+            }
+            td {
+                background-color: #f3e8d8;
+                color: #243747;
+            }
+            th {
+                background-color: #243747;
+                color: white;
+            }
+            
+            footer {
+                margin-top: 50px;
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1> Contact-Us Inquiry from:  <b>{{ firstName}} {{ lastName }}</b></h1>
+        
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>{{ firstName }} {{ lastName }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ email }}</td>
+            </tr>
+            <tr>
+                <th>Phone #</th>
+                <td>{{ phone }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ message|linebreaks }}</td>
+            </tr>
+        </table>
+        
+        <footer>
+            <h4>
+                Automated message from PT Noodles Web Server. 
+            </h4>
+        </footer>
+    </body>
+</html>

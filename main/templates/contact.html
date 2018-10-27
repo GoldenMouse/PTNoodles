@@ -20,7 +20,30 @@
 <div id="contactus" class="contactus">
     <h1 class="contactus__header">Contact Us</h1> 
     
-    <div class="contactus__info"></div>
+    <div class="contactus__info">
+        <div class="contactus__info--line">
+            <div class="contactus__info--icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contactus__info--detail">
+                <a href="mailto:customerservice@ptnoodles.com">
+                    customerservice@ptnoodles.com
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="contactus__info--line">
+            <div class="contactus__info--icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <div class="contactus__info--detail">
+                1050 N. Fairway Dr. <br/>
+                Ste H102 <br/>
+                Avondale, AZ 85323
+            </div>
+        </div>
+    </div>
     
     <form id="ContactForm" method=post class="contactus__form">
         {% csrf_token %}
@@ -52,8 +75,6 @@
         <input type="submit" value="Send" class="contactus__form--submit btn"/>
     </form>
    
-</form>
-    
 </div>
    
 {% endblock %}

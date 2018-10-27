@@ -993,17 +993,41 @@ div#locations {
 
 .contactus {
   color: var(--color-text-dark);
-  margin: 4rem 4rem;
+  background-color: var(--color-bg-rose);
+  padding: 4rem 4rem;
   display: flex;
   flex-flow: column nowrap;
   align-items: center; }
   .contactus__header {
-    margin: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: 0.2rem;
     font-weight: 800;
     font-family: "Work Sans", "sans-serif"; }
+  .contactus__info {
+    margin-bottom: 5rem; }
+
+.contactus__info--line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0.8rem 0;
+  font-size: 1.5rem;
+  font-family: "Roboto Condensed", "sans-serif"; }
+
+.contactus__info--icon {
+  font-size: 1.5rem;
+  margin: 0 2rem;
+  height: 100%; }
+
+.contactus__info--detail {
+  color: var(--color-text-primary); }
+  .contactus__info--detail > a {
+    color: var(--color-text-primary); }
+    .contactus__info--detail > a:hover {
+      text-decoration: underline; }
 
 .contactus__form {
   color: var(--color-text-primary);
@@ -1012,11 +1036,14 @@ div#locations {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(10rem, 1fr);
   grid-template-areas: 'f f l l l' 'e e e e e' 'p p p p p' 'm m m m m' '. . s . .'; }
+  @media only screen and (max-width: 64em) {
+    .contactus__form {
+      grid-template-areas: 'f f f f f' 'l l l l l' 'e e e e e' 'p p p p p' 'm m m m m' '. . s . .'; } }
   .contactus__form input,
   .contactus__form textarea {
     background-color: #fff;
     border: none;
-    padding: 1rem;
+    padding: 1.4rem;
     line-height: 1.5;
     font-size: 1.6rem;
     width: 100%;
@@ -1044,7 +1071,21 @@ div#locations {
   .contactus__form--message {
     grid-area: m; }
   .contactus__form--submit {
-    grid-area: s; }
+    grid-area: s;
+    margin-bottom: 5rem; }
+
+.contactus__submitted {
+  margin: 3rem;
+  text-align: center;
+  position: relative;
+  top: 20%; }
+  .contactus__submitted--title {
+    font-size: 2rem;
+    color: var(--color-text-dark); }
+  .contactus__submitted--check {
+    font-size: 10rem;
+    color: green;
+    padding: 4rem 0; }
 
 #play {
   height: 100%;

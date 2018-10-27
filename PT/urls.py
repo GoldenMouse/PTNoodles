@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 from main import views
 
 urlpatterns = [
@@ -24,6 +25,9 @@ urlpatterns = [
     path('locations', views.locations, name='locations'),
     path('gallery', views.gallery, name='gallery'),
     path('contact', views.contact, name='contact'),
+    path('contact-submitted', 
+        TemplateView.as_view(template_name='contact-submitted.html'), 
+        name="contact-submitted"),
     path('play', views.play, name='play'),
     
     path('admin/', admin.site.urls),

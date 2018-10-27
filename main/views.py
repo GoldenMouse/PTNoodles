@@ -1,10 +1,12 @@
 import os
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 from .forms import ContactForm
 
@@ -55,7 +57,31 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/thanks/')
+            subject = 'PTNoodles Contact-Us Inquiry'
+            sender = 'webadmin@ptnoodles.com' 
+            #recipients = ['ttmousy@gmail.com',]
+            recipients = ['demon_entity@yahoo.com',]
+            
+            msg_params = {
+                'firstName': form.cleaned_data['firstName'],
+                'lastName': form.cleaned_data['lastName'],
+                'email': form.cleaned_data['email'], 
+                'phone': form.cleaned_data['phone'],
+                'message': form.cleaned_data['message']
+            }
+            
+            message = 'no html',
+            html_message =  render_to_string('email/contactus.html', msg_params)
+        
+            send_mail(
+                subject, 
+                html_message,
+                sender,
+                recipients,
+                html_message=html_message,
+                fail_silently=False,
+            )
+            return redirect("contact-submitted")
 
     # 
     else:
