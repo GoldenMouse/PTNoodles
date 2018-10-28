@@ -29,24 +29,52 @@
 
     <body>
         {% block modal %}{% endblock %}
-        <nav class="nav-mobile navs">
-            <ul>
-                <li><a href="#">info</a></li>
-                <li><a href="#">contact</a></li>
-                <li><a href="#">menus</a></li>
-                <li><a href="#">locations & hours</a></li>
-                <li><a href="#">private events</a></li>
-                <li><a href="#">press</a></li>
-                <li><a href="#">reservations</a></li>
-            </ul>
-        </nav>
+        
+        <!-- MOBILE NAVS -->
+        <div class="hamburger">
+            <div class="hamburger__bar1"></div>
+            <div class="hamburger__bar2"></div>
+            <div class="hamburger__bar3"></div>
+        </div>
+        
+        <div class="nav-mobile navs">
+            <!-- MOBILE MAIN NAVS -->
+            <nav id="nav-mobile--main">
+                <ul>
+                    <li><a href="{% url "index" %}">home</a></li>
+                    <li><a href="{% url "locations" %}">locations</a></li>
+                    <li><a href="#" id="mobile__links--menus">menus</a></li>
+                    <li><a href="{% url "gallery" %}">gallery</a></li>
+                    <li><a href="{% url "contact" %}">contact</a></li>
+                    <li><a href="#">reservations</a></li>
+                </ul>
+            </nav>
+            
+            <!-- MOBILE MENU NAVS -->
+            <nav class="navs--menus hidden" id="nav-mobile--menus">
+                <h2 class="navs--menus__heading">Menus</h2>
+                <ul>
+                    <li><a href="{% url 'menus' location="avondale" %}">Avondale</a></li>
+                    <li><a href="{% url 'menus' location="surprise" %}">Surprise</a></li>
+                    <li><a href="{% url 'menus' location="goodyear" %}">Goodyear</a></li>
+                    <li>
+                        <a href="{% url 'menus' location="phoenix" %}">
+                            Phoenix
+                            <span class="tag">New</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-arrow-alt-circle-left back-arrow" id="back-arrow--mobile"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- END MOBILE NAVS -->
         
         <div class="container">
-            <div class="hamburger">
-                <div class="hamburger__bar1"></div>
-                <div class="hamburger__bar2"></div>
-                <div class="hamburger__bar3"></div>
-            </div>
             <div class="sidebar">
                 <div class="sidebar__desktop">
                     <header class="logo">
@@ -99,7 +127,7 @@
                         </div>
                     </nav>
 
-                    <nav class="navs--menus animated slideInLeft hidden">
+                    <nav class="navs--menus animated slideInLeft hidden" id="nav-main--menus">
                         <h2 class="navs--menus__heading">Menus</h2>
                         <ul>
                             <li><a href="{% url 'menus' location="avondale" %}">Avondale</a></li>
@@ -113,27 +141,25 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="far fa-arrow-alt-circle-left back-arrow"></i>
+                                    <i class="far fa-arrow-alt-circle-left back-arrow" id="back-arrow--main"></i>
                                 </a>
                             </li>
                         </ul>
                     </nav>
 
-                   
-
-                    
                 </div>
 
+                <!-- MOBILE HEADER -->
                 <div class="sidebar__mobile">
-                    <div class="emblem">
+                    <div>
                         <img 
-                            src="https://s3-us-west-2.amazonaws.com/mwee-images/pt-logo-emblem-only-white.png" class="emblem"
+                            src="https://s3-us-west-2.amazonaws.com/mwee-images/pt-logo-emblem-only-white.png" 
+                            class="emblem__mobile"
                         />
                     </div>
-                    <div class="logo__mobile">PT NOODLE</div>
-
-                    
+                    <div class="logo__mobile">PT Noodles</div>
                 </div>
+                <!-- END MOBILE HEADER -->
 
                 <div class="footer">
                     <h4><a href="#">Call now to order</a></h4>

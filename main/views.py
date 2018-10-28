@@ -59,8 +59,7 @@ def contact(request):
         if form.is_valid():
             subject = 'PTNoodles Contact-Us Inquiry'
             sender = 'webadmin@ptnoodles.com' 
-            #recipients = ['ttmousy@gmail.com',]
-            recipients = ['demon_entity@yahoo.com',]
+            recipients = ['ttmousy@gmail.com',]
             
             msg_params = {
                 'firstName': form.cleaned_data['firstName'],
