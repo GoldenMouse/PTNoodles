@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<!--
 <div class="slider">
     <div 
         class="slider__img" 
@@ -24,6 +25,30 @@
         <button class="slider__btns--right" onclick="plusDivs(1)">
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
         </button>
+    </div>
+</div>
+-->
+<div id="index">
+    <div class="index__hero">
+        <div class="index__hero--img">
+            <img src="{% static 'img/truehero1.jpg' %}" />
+        </div>
+        <div class="index__hero--img">
+            <img src="{% static 'img/truehero3.jpg' %}"/>
+        </div>
+        <div class="index__hero--img">
+            <img src="{% static 'img/truehero2.jpg' %}"/>
+        </div>
+        <div class="index__hero--img">
+            <img src="{% static 'img/truehero4.jpg' %}"/>
+        </div>
+        
+        
+        <div class="index__hero--title">
+            <div>Fresh</div>
+            <div>House Made Noodles</div>
+            <div><i>Everyday</i></div>
+        </div>
     </div>
 </div>
 

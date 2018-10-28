@@ -57,6 +57,11 @@
     padding: 1.2rem 0;
     text-transform: uppercase;
     margin-top: 3rem;
+    
+    & > a {
+        color: var(--color-text-primary);
+        background-color: var(--color-bg-light);
+    }
 
     &__main {
         font-size: 4rem;
