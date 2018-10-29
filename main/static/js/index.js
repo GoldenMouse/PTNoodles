@@ -1,6 +1,5 @@
 /*** 
    Carousel 
-***/
 
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -20,13 +19,4 @@ function showDivs(n) {
     x[slideIndex-1].style.display = "block"; 
 }
 
-
-/*** Call Now Btn ***/
-var callnow_btn = document.querySelector(".footer__mobile");
-
-callnow_btn.addEventListener("click", function(){
-   var modal = document.querySelector(".modal__callnow"); 
-   modal.styles.display = "flex";
-   
-   alert("clicked");
-});
+***/

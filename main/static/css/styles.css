@@ -436,6 +436,25 @@ a {
     .callnow--card__item div:nth-child(3) a:hover {
       color: var(--color-bg-rose); }
 
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 5rem;
+  right: 4.5rem;
+  z-index: 50;
+  font-size: 3rem;
+  opacity: 0.8;
+  width: auto;
+  cursor: pointer; }
+  .scroll-to-top > a {
+    color: var(--color-bg-primary); }
+  .scroll-to-top:hover {
+    opacity: 1; }
+  @media only screen and (max-width: 64em) {
+    .scroll-to-top {
+      right: 50%;
+      transform: translateX(50%); } }
+
 .sidebar {
   flex: 0 0 32rem;
   overflow-y: auto;
@@ -880,25 +899,6 @@ ul.drinks-grid {
     color: var(--color-text-dark); }
     .download-pdf a:hover {
       text-decoration: underline; }
-
-.scroll-to-top {
-  display: none;
-  position: fixed;
-  bottom: 5rem;
-  right: 4.5rem;
-  z-index: 300;
-  font-size: 3rem;
-  opacity: 0.8;
-  width: auto;
-  cursor: pointer; }
-  .scroll-to-top > a {
-    color: var(--color-bg-primary); }
-  .scroll-to-top:hover {
-    opacity: 1; }
-  @media only screen and (max-width: 64em) {
-    .scroll-to-top {
-      right: 50%;
-      transform: translateX(50%); } }
 
 div#locations {
   margin: 6rem 5%;
