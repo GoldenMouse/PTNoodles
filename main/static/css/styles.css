@@ -118,6 +118,9 @@ a {
   flex-direction: column;
   position: relative;
   overflow: auto; }
+  @media only screen and (max-width: 64em) {
+    .content {
+      padding-bottom: 4rem; } }
 
 .footer {
   text-align: center;
@@ -126,12 +129,31 @@ a {
   font-family: 'Saira Semi Condensed', sans-serif;
   text-transform: uppercase;
   background-color: var(--color-bg-primary);
-  padding: 1.5rem; }
+  padding: 1.5rem;
+  cursor: pointer; }
   .footer a:hover {
     color: var(--color-text-light); }
   @media only screen and (max-width: 64em) {
     .footer {
       display: none; } }
+  .footer__mobile {
+    display: none; }
+    @media only screen and (max-width: 64em) {
+      .footer__mobile {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 1.2rem;
+        color: red;
+        z-index: 1000;
+        background-color: var(--color-bg-rose);
+        border: 1px solid var(--color-bg-primary);
+        cursor: pointer; }
+        .footer__mobile a {
+          color: var(--color-text-primary);
+          font-size: 1.6rem;
+          letter-spacing: 0.2rem; } }
 
 .hidden {
   opacity: 0 !important;
@@ -277,7 +299,7 @@ a {
   position: absolute; }
 
 .banner {
-  min-height: 80vh;
+  min-height: 70vh;
   width: 100%;
   display: flex;
   position: relative; }
@@ -350,6 +372,69 @@ a {
     color: var(--color-bg-rose);
     background-color: var(--color-bg-primary); }
 
+.modal__callnow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 0;
+  position: fixed;
+  z-index: 5000;
+  bottom: 0;
+  width: 32rem;
+  background-color: var(--color-bg-rose);
+  text-align: center;
+  overflow: hidden;
+  transition-property: all;
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(0.93, 0.12, 0.35, 0.87);
+  height: 100vh; }
+  @media only screen and (max-width: 64em) {
+    .modal__callnow {
+      width: 100%; } }
+
+.callnow--close {
+  width: 100%;
+  padding-right: 1rem;
+  text-align: right;
+  font-size: 3.5rem;
+  color: var(--color-text-primary);
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer; }
+
+.callnow--card {
+  display: flex;
+  flex-direction: column; }
+
+.callnow--card__item {
+  margin: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.4rem;
+  border: 1px solid var(--color-bg-rose); }
+  .callnow--card__item:hover {
+    border: 1px solid var(--color-bg-primary); }
+  .callnow--card__item > div {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--color-bg-primary);
+    color: var(--color-bg-primary); }
+  .callnow--card__item div:nth-child(1) {
+    width: 10rem;
+    background-color: var(--color-bg-primary);
+    color: var(--color-bg-rose); }
+  .callnow--card__item div:nth-child(3) {
+    background-color: var(--color-bg-primary);
+    color: var(--color-bg-rose);
+    border-left: none;
+    padding: 0; }
+    .callnow--card__item div:nth-child(3) i {
+      padding: 1rem 1.5rem; }
+    .callnow--card__item div:nth-child(3) a:hover {
+      color: var(--color-bg-rose); }
+
 .sidebar {
   flex: 0 0 32rem;
   overflow-y: auto;
@@ -413,7 +498,8 @@ a {
 
 .emblem {
   width: auto;
-  height: 10rem; }
+  height: 13rem;
+  margin: 2rem 0; }
   @media only screen and (max-width: 64em) {
     .emblem__mobile {
       height: 5rem;
@@ -524,20 +610,10 @@ a {
   .index__hero--img {
     width: 50%;
     height: 50vh;
-    filter: brightness(90%);
-    /*
-        @media only screen and (max-width: $bp-medium) {
-            width: 100%;
-            
-            &:nth-child(2) {
-                display: none;
-            }
-            
-            &:nth-child(3){
-                display: none;
-            }
-        }
-        */ }
+    filter: brightness(90%); }
+    @media only screen and (max-width: 64em) {
+      .index__hero--img {
+        height: 46vh; } }
   .index__hero--title {
     display: flex;
     flex-direction: column;
@@ -830,7 +906,7 @@ div#locations {
   border-top: 1rem solid var(--color-bg-dark);
   box-shadow: 0rem 0.3rem 3rem rgba(0, 0, 0, 0.15);
   background-color: var(--color-bg-rose);
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   transition-timing-function: ease-in-out; }
   .card__container {
     margin: 4rem 0;

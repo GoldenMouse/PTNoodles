@@ -183,7 +183,7 @@
 
 
 .banner {
-    min-height: 80vh;
+    min-height: 70vh;
     width: 100%;
     display: flex;
     position: relative;
@@ -280,3 +280,85 @@
         background-color: var(--color-bg-primary);
     }
 }
+
+.modal__callnow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 0; // important so that it hides the element
+    position: fixed;
+    z-index: 5000;
+    bottom: 0;
+    width: 32rem;
+    
+    background-color: var(--color-bg-rose);
+    text-align: center;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.93,.12,.35,.87); 
+    //margin-bottom: 4.5rem;
+    height: 100vh;
+    
+    @media only screen and (max-width: $bp-medium) {
+        width: 100%;
+    }
+}
+.callnow--close {
+    width: 100%;
+    padding-right: 1rem;
+    text-align: right;
+    font-size: 3.5rem;
+    color: var(--color-text-primary);
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.callnow--card {
+    display: flex;
+    flex-direction: column;
+}
+.callnow--card__item {
+    margin: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.4rem;
+    border: 1px solid var(--color-bg-rose); 
+    
+    &:hover {
+       border: 1px solid var(--color-bg-primary); 
+    }
+    
+    & > div {
+        text-align: center;
+        padding: 1rem;
+        border: 1px solid var(--color-bg-primary);
+        color: var(--color-bg-primary);
+    } 
+    
+    & div:nth-child(1) {
+        width: 10rem;
+        background-color: var(--color-bg-primary);
+        color: var(--color-bg-rose);
+    }
+    & div:nth-child(2) {
+    }
+    & div:nth-child(3) {
+        background-color: var(--color-bg-primary);
+        color: var(--color-bg-rose);
+        border-left: none;
+        padding: 0;
+        
+        & i {
+            padding: 1rem 1.5rem;
+        }
+        
+        
+        & a:hover{
+            color: var(--color-bg-rose);
+        }
+    }
+}
+    

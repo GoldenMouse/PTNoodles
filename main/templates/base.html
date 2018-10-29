@@ -28,6 +28,31 @@
     </head>
 
     <body>
+        <div class="modal__callnow">
+            <div class="callnow--close">&times;</div>
+            <div class="callnow--card">
+                <div class="callnow--card__item">
+                    <div>Phoenix</div>
+                    <div>602-358-7037</div>
+                    <div><a href="tel:602-358-7037"><i class="fas fa-phone"></i></a></div>
+                </div>    
+                <div class="callnow--card__item">
+                    <div>Avondale</div>
+                    <div>623-936-7633</div>
+                    <div><a href="tel:623-936-7633"><i class="fas fa-phone"></i></a></div>
+                </div>    
+                <div class="callnow--card__item">
+                    <div>Surprise</div>
+                    <div>623-322-8399</div>
+                    <div><a href="tel:623-322-8399"><i class="fas fa-phone"></i></a></div>
+                </div>    
+                <div class="callnow--card__item">
+                    <div>Goodyear</div>
+                    <div>623-536-2099</div>
+                    <div><a href="tel:623-536-2099"><i class="fas fa-phone"></i></a></div>
+                </div>    
+            </div> 
+        </div>
         {% block modal %}{% endblock %}
         
         <!-- MOBILE NAVS -->
@@ -46,8 +71,23 @@
                     <li><a href="#" id="mobile__links--menus">menus</a></li>
                     <li><a href="{% url "gallery" %}">gallery</a></li>
                     <li><a href="{% url "contact" %}">contact</a></li>
-                    <li><a href="#">reservations</a></li>
                 </ul>
+                
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="{% url "locations" %}#locations" >
+                                <i class="fab fa-facebook-f circular"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url "locations" %}#locations"><i class="fab fa-yelp circular"></i></a>
+                        </li>
+                        <li>
+                            <a href="{% url "contact" %}#contactus"><i class="fas fa-envelope circular"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
             
             <!-- MOBILE MENU NAVS -->
@@ -88,7 +128,7 @@
                         </a>
                     </header>
 
-                    <div class="emblem">
+                    <div>
                         <a href="{% url "index" %}">
                             <img 
                                 src="https://s3-us-west-2.amazonaws.com/mwee-images/pt-logo-emblem-only-white.png" class="emblem"
@@ -96,14 +136,13 @@
                         </a>
                     </div>
 
+                    <!--
                     <div class="contact-info">
                         <div class="contact-info__addr">
-                            <a href="#">1590 Second Ave, New York, NY</a>
-                        </div>
-                        <div class="contact-info__phone">
-                            <a href="#">669.224.0316</a>
+                            Now serving 5 locations in Arizona!
                         </div>
                     </div>
+                    -->
 
                     <nav class="navs" id="main-navs">
                         <ul>
@@ -111,19 +150,20 @@
                             <li><a href="#" id="navs__link--menus">menus</a></li>
                             <li><a href="{% url "gallery" %}">gallery</a></li>
                             <li><a href="{% url "contact" %}">contact</a></li>
-                            <li><a href="#">reservations</a></li>
                         </ul>
                         
                         <div class="social">
                             <ul>
                                 <li>
-                                    <a href="#"><i class="fab fa-facebook-f circular"></i></a>
+                                    <a href="{% url "locations" %}#locations" >
+                                        <i class="fab fa-facebook-f circular"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fab fa-instagram circular"></i></a>
+                                    <a href="{% url "locations" %}#locations"><i class="fab fa-yelp circular"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-envelope circular"></i></a>
+                                    <a href="{% url "contact" %}#contactus"><i class="fas fa-envelope circular"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -162,6 +202,12 @@
                     <div class="logo__mobile">PT Noodles</div>
                 </div>
                 <!-- END MOBILE HEADER -->
+                
+                <!-- MOBILE FOOTER -->
+                <div class="footer__mobile">
+                    <h4><a href="#" class="footer__mobile--btn">Call now to order</a></h4>
+                </div>
+                <!-- END MOBILE FOOTER -->
 
                 <div class="footer">
                     <h4><a href="#">Call now to order</a></h4>

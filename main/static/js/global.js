@@ -14,10 +14,7 @@ function closeNav() {
     document.querySelector(".hamburger").addEventListener("click", openNav);
 }
 
-// Look for .hamburger
 var hamburger = document.querySelector(".hamburger");
-// On click
-/** */
 hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("change");
     openNav();
@@ -25,7 +22,7 @@ hamburger.addEventListener("click", function() {
 
 
 /***
-   Sub Nav Button Effects 
+   SubNav Menu Button Effects 
 ***/
 
 
@@ -111,4 +108,30 @@ function resizeHeader() {
     }
 }
 
+/*** Call Now Btn ***/
+var footer_btn = document.querySelector(".footer");
+var callnow_btn = document.querySelector(".footer__mobile");
+var callnow_close_btn = document.querySelector(".callnow--close");
+var callnow_modal = document.querySelector(".modal__callnow"); 
+
+function callnow_open () {
+   callnow_modal.style.maxHeight= "100vh";
+}
+
+function callnow_close () {
+   callnow_modal.style.maxHeight= "0";
+}
+
+callnow_btn.addEventListener("click", function(){
+    callnow_open();
+});
+
+footer_btn.addEventListener("click", function(){
+    callnow_open();
+});
+
+
+callnow_close_btn.addEventListener("click", function(){
+    callnow_close();
+});
 
