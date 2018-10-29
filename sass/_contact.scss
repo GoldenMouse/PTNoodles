@@ -85,9 +85,10 @@
     & label {
         display: inline-block;
         color: var(--color-text-dark);
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         margin-bottom: 0.2rem;
-        font-weight: 500;
+        font-family: 'Lora', serif;
+        font-weight: 700;
         
         &::after {
             content: ' \2731';
@@ -122,6 +123,14 @@
     &--submit{
         grid-area: s;
         margin-bottom: 5rem;
+        background-color: var(--color-bg-primary) !important;
+        color: var(--color-bg-rose) !important;
+        
+        &:hover {
+            background-color: white !important;
+            color: var(--color-bg-primary) !important;
+        }
+        
     }
 }
 

@@ -117,7 +117,8 @@ a {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: auto; }
+  overflow: auto;
+  scroll-behavior: smooth; }
   @media only screen and (max-width: 64em) {
     .content {
       padding-bottom: 4rem; } }
@@ -880,6 +881,25 @@ ul.drinks-grid {
     .download-pdf a:hover {
       text-decoration: underline; }
 
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 5rem;
+  right: 4.5rem;
+  z-index: 300;
+  font-size: 3rem;
+  opacity: 0.8;
+  width: auto;
+  cursor: pointer; }
+  .scroll-to-top > a {
+    color: var(--color-bg-primary); }
+  .scroll-to-top:hover {
+    opacity: 1; }
+  @media only screen and (max-width: 64em) {
+    .scroll-to-top {
+      right: 50%;
+      transform: translateX(50%); } }
+
 div#locations {
   margin: 6rem 5%;
   display: grid;
@@ -1191,9 +1211,10 @@ div#locations {
   .contactus__form label {
     display: inline-block;
     color: var(--color-text-dark);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 0.2rem;
-    font-weight: 500; }
+    font-family: 'Lora', serif;
+    font-weight: 700; }
     .contactus__form label::after {
       content: ' \2731';
       vertical-align: super;
@@ -1212,7 +1233,12 @@ div#locations {
     grid-area: m; }
   .contactus__form--submit {
     grid-area: s;
-    margin-bottom: 5rem; }
+    margin-bottom: 5rem;
+    background-color: var(--color-bg-primary) !important;
+    color: var(--color-bg-rose) !important; }
+    .contactus__form--submit:hover {
+      background-color: white !important;
+      color: var(--color-bg-primary) !important; }
 
 .contactus__submitted {
   margin: 3rem;
