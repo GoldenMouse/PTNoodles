@@ -1,10 +1,10 @@
 .main {
-   // background-image:  
-    //url("https://s3-us-west-2.amazonaws.com/mwee-images/creamwood.png");
-    background-repeat: repeat;
-    background-position: top left;
-    flex: 1;
     margin: 2rem 5rem;
+    
+    @media only screen and (max-width: $bp-medium) {
+        margin: 0 1rem;
+    }
+    
 }
 
 .menu-nav {
@@ -51,8 +51,6 @@
 
 #specials {
     letter-spacing: 0.3rem;
-    //color: var(--color-text-gold);
-    //color: var(--color-text-light);
 
     &:hover {
         background-color: var(--color-text-gold);
@@ -80,6 +78,7 @@
     transition-delay: 0.1s;
 
     @media only screen and (max-width: $bp-medium) {
+        margin: 0 2rem;
     }
 
     &__extras {
@@ -90,6 +89,11 @@
         margin-left: 15%;
         margin-right: 15%;
         position: relative;
+        
+        @media only screen and (max-width: $bp-medium) {
+            margin:0;
+            margin-bottom: 4rem;
+        }
 
         & header  {
             position: absolute;
@@ -155,12 +159,13 @@
 
 
         &--name {
-        display: flex;
-        text-transform: uppercase;
-        letter-spacing: 0.1rem;
-        font-weight: 700;
-        font-size: 1.8rem;
-        line-height: 1.3;
+            display: flex;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 1.3;
         }
         
         &--detail {
@@ -176,7 +181,6 @@
                 margin-bottom: 0.2rem;
 
                 &::before {
-                    //content: "\21AA \a0 ";
                     content: "\21D2 \a0 ";
                     font-style: normal;
 

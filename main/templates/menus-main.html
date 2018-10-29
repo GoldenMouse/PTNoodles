@@ -4,76 +4,51 @@
 
 {% block content %}
 <div class="banner">
-    <div class="slider">
-        {% if location == 'avondale' %}
-        <div 
-            class="slider__img slider__img--dimmer" 
-            style="background-image: url({% static 'img/avondale-menu-hero.jpeg' %})">
-        </div>
-        {% elif location == 'goodyear' %} 
-        <div 
-            class="slider__img slider__img--dimmer"
-            style="background-image: url({% static 'img/goodyear-menu-hero.jpeg' %})">
-        </div>
-        {% elif location == 'surprise' %}
-        <div 
-            class="slider__img slider__img--dimmer" 
-            style="background-image: url({% static 'img/surprise-menu-hero.jpeg' %})">
-        </div>
-        {% elif location == 'phoenix' %}
-        <div 
-            class="slider__img slider__img--dimmer" 
-            style="background-image: url({% static 'img/phoenix-menu-hero.jpeg' %})">
-        </div>
-        {% endif %}
-    
-        <!--
-        <div class="slider__btns">
-            <button class="slider__btns--left" onclick="plusDivs(-1)">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                
-            </button>
-            <button class="slider__btns--right" onclick="plusDivs(1)">
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </button>
-        </div>
-        -->
-    
-    
-        <div class="slider__title">
-            <div class="slider__title--main">Menus</div>
-            <div class="slider__title--sub">{{ location|title }}</div>
-        </div>
-    </div>
-    </div>
-    
-    <div id="menu-main" class="main">
-        <div id="menu-nav" class="menu-nav">
-            <a href="#menu-main" id="menu-appetizer-btn" class="menu-nav__links">Appetizer</a>
-            <a href="#menu-main" id="menu-entrees-btn" class="menu-nav__links selected">Entrees</a>
-            <a href="#menu-main" id="menu-drinks-btn" class="menu-nav__links">Drinks</a>
-            <a href="#menu-main" id="menu-dessert-btn" class="menu-nav__links">Dessert</a>
-        </div>
-        <div class="download-pdf">
-            <a href="#">
-                <h4>Download PDF <i class="fas fa-file-download"></i></h4>
-            </a>
-        </div>
+    <div class="banner__img" 
         
-        <div id="menu-content" class="menu-content">
-            {% if location == 'surprise' %}
-                {% include "includes/menus-surprise_appetizer.html" %}
-                {% include "includes/menus-surprise_entrees.html" %}
-                {% include "includes/menus-surprise_drinks.html" %}
-            {% else %}
-                {% include "includes/menus-main_appetizer.html" %}
-                {% include "includes/menus-main_entrees.html" %}
-                {% include "includes/menus-main_drinks.html" %}
-            {% endif %}
-            
+        {% if location == 'avondale' %}
+            style="background-image: url({% static 'img/avondale-menu-hero.jpeg' %})"
+        {% elif location == 'goodyear' %} 
+            style="background-image: url({% static 'img/goodyear-menu-hero.jpeg' %})"
+        {% elif location == 'surprise' %}
+            style="background-image: url({% static 'img/surprise-menu-hero.jpeg' %})"
+        {% elif location == 'phoenix' %}
+            style="background-image: url({% static 'img/phoenix-menu-hero.jpeg' %})"
+        {% endif %}>
+    </div>
+    
+    <div class="banner__title">
+        <div class="banner__title--main">Menus</div>
+        <div class="banner__title--sub">{{ location|title }}</div>
+    </div>
+</div>
+    
+<div id="menu-main" class="main">
+    <div id="menu-nav" class="menu-nav">
+        <a href="#menu-main" id="menu-appetizer-btn" class="menu-nav__links">Appetizer</a>
+        <a href="#menu-main" id="menu-entrees-btn" class="menu-nav__links selected">Entrees</a>
+        <a href="#menu-main" id="menu-drinks-btn" class="menu-nav__links">Drinks</a>
+        <a href="#menu-main" id="menu-dessert-btn" class="menu-nav__links">Dessert</a>
+    </div>
+    
+    <div class="download-pdf">
+        <a href="{% static "docs/PTNoodles_Main_Menus.pdf" %}" download>
+            <h4>Download PDF <i class="fas fa-file-download"></i></h4>
+        </a>
+    </div>
+    
+    <div id="menu-content" class="menu-content">
+        {% if location == 'surprise' %}
+            {% include "includes/menus-surprise_appetizer.html" %}
+            {% include "includes/menus-surprise_entrees.html" %}
+            {% include "includes/menus-surprise_drinks.html" %}
+        {% else %}
             {% include "includes/menus-main_appetizer.html" %}
-            {% include "includes/menus-main_dessert.html" %}
-        </div>
+            {% include "includes/menus-main_entrees.html" %}
+            {% include "includes/menus-main_drinks.html" %}
+        {% endif %}
+        
+        {% include "includes/menus-main_dessert.html" %}
     </div>
 </div>
 {% endblock %}
