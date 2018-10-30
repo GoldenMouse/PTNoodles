@@ -380,15 +380,10 @@ a {
       width: 100%; } }
 
 .callnow--close {
-  width: 100%;
-  padding-right: 1rem;
-  text-align: right;
-  font-size: 3.5rem;
+  font-size: 4rem;
   color: var(--color-text-primary);
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-top: 5rem; }
 
 .callnow--card {
   display: flex;
@@ -622,7 +617,7 @@ a {
     flex-direction: column;
     justify-content: center;
     width: 20rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--color-text-dark);
     background-color: rgba(236, 234, 221, 0.9);
     border: 0.4rem solid var(--color-text-dark);
@@ -644,7 +639,7 @@ a {
     .index__hero--title > div:first-child {
       border-bottom: 0.4rem solid var(--color-text-dark); }
     .index__hero--title > div:nth-child(2) {
-      font-size: 140%;
+      font-size: 160%;
       font-weight: 700;
       font-style: normal; }
     .index__hero--title > div:last-child {
