@@ -90,7 +90,7 @@
         margin-right: 15%;
         position: relative;
         
-        @media only screen and (max-width: $bp-medium) {
+        @media only screen and (max-width: $bp-small) {
             margin:0;
             margin-bottom: 4rem;
         }
@@ -115,7 +115,7 @@
             margin-top: 1rem;
 
             @media only screen and (max-width: $bp-medium) {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
             }
         }
     }
@@ -175,15 +175,22 @@
             width: 85%;
             margin-top: 0.2rem;
             margin-bottom: 1rem;
+            font-family: 'Lora', serif;
+            
+            @media only screen and (max-width: $bp-small) {
+                font-size: 1.2rem;
+            }
 
             &.indent {
-                margin-left: 1.5rem;
-                margin-bottom: 0.2rem;
+                margin-left: 1.2rem;
 
                 &::before {
                     content: "\21D2 \a0 ";
                     font-style: normal;
-
+                    
+                    @media only screen and (max-width: $bp-small) {
+                        content: '';
+                    }
                 }
             }
         }
@@ -312,3 +319,9 @@ ul.drinks-grid {
     
 }
 
+#addons-header {
+    padding: 0.8rem;
+    @media only screen and (max-width: $bp-small) {
+        font-size: 2rem;
+    }
+}

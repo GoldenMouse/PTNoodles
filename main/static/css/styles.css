@@ -293,6 +293,9 @@ a {
     background-size: cover;
     width: 100%;
     filter: brightness(80%); }
+    @media only screen and (max-width: 64em) {
+      .banner__img {
+        background-attachment: scroll; } }
   .banner__title {
     text-align: center;
     position: absolute;
@@ -630,7 +633,7 @@ a {
     @media only screen and (max-width: 64em) {
       .index__hero--title {
         width: 8rem;
-        font-size: 0.8rem; } }
+        font-size: 1rem; } }
     .index__hero--title > div {
       text-transform: uppercase;
       text-align: center;
@@ -639,7 +642,7 @@ a {
     .index__hero--title > div:first-child {
       border-bottom: 0.4rem solid var(--color-text-dark); }
     .index__hero--title > div:nth-child(2) {
-      font-size: 160%;
+      font-size: 140%;
       font-weight: 700;
       font-style: normal; }
     .index__hero--title > div:last-child {
@@ -721,7 +724,7 @@ a {
     margin-left: 15%;
     margin-right: 15%;
     position: relative; }
-    @media only screen and (max-width: 64em) {
+    @media only screen and (max-width: 30em) {
       .menu-main__extras {
         margin: 0;
         margin-bottom: 4rem; } }
@@ -742,7 +745,7 @@ a {
       margin-top: 1rem; }
       @media only screen and (max-width: 64em) {
         .menu-main__extras > ul {
-          grid-template-columns: repeat(2, 1fr); } }
+          grid-template-columns: repeat(1, 1fr); } }
   .menu-main__courses {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -782,13 +785,19 @@ a {
       font-size: 1.4rem;
       width: 85%;
       margin-top: 0.2rem;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      font-family: 'Lora', serif; }
+      @media only screen and (max-width: 30em) {
+        .item-group__item--detail {
+          font-size: 1.2rem; } }
       .item-group__item--detail.indent {
-        margin-left: 1.5rem;
-        margin-bottom: 0.2rem; }
+        margin-left: 1.2rem; }
         .item-group__item--detail.indent::before {
           content: "\21D2 \a0 ";
           font-style: normal; }
+          @media only screen and (max-width: 30em) {
+            .item-group__item--detail.indent::before {
+              content: ''; } }
     .item-group__item--subdetail {
       font-size: 1.6rem;
       font-weight: 600;
@@ -877,6 +886,12 @@ ul.drinks-grid {
     color: var(--color-text-dark); }
     .download-pdf a:hover {
       text-decoration: underline; }
+
+#addons-header {
+  padding: 0.8rem; }
+  @media only screen and (max-width: 30em) {
+    #addons-header {
+      font-size: 2rem; } }
 
 div#locations {
   margin: 6rem 5%;
@@ -1132,14 +1147,19 @@ div#locations {
   display: flex;
   flex-flow: column nowrap;
   align-items: center; }
+  @media only screen and (max-width: 30em) {
+    .contactus {
+      margin: 2rem 0; } }
   .contactus__header {
-    margin-top: 3rem;
-    margin-bottom: 4rem;
+    margin: 3rem;
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 3rem;
     letter-spacing: 0.2rem;
     font-weight: 800;
     font-family: "Work Sans", "sans-serif"; }
+    @media only screen and (max-width: 30em) {
+      .contactus__header {
+        font-size: 2.2rem; } }
   .contactus__info {
     margin-bottom: 5rem; }
 
@@ -1150,6 +1170,9 @@ div#locations {
   margin: 0.8rem 0;
   font-size: 1.5rem;
   font-family: "Roboto Condensed", "sans-serif"; }
+  @media only screen and (max-width: 30em) {
+    .contactus__info--line {
+      font-size: 1.4rem; } }
 
 .contactus__info--icon {
   font-size: 1.5rem;
