@@ -617,9 +617,6 @@ a {
     width: 50%;
     height: 50vh;
     filter: brightness(90%); }
-    @media only screen and (max-width: 64em) {
-      .index__hero--img {
-        height: 47vh; } }
   .index__hero--title {
     display: flex;
     flex-direction: column;
@@ -637,8 +634,8 @@ a {
     font-weight: 300; }
     @media only screen and (max-width: 64em) {
       .index__hero--title {
-        width: 12rem;
-        font-size: 1.2rem; } }
+        width: 8rem;
+        font-size: 0.8rem; } }
     .index__hero--title > div {
       text-transform: uppercase;
       text-align: center;
@@ -647,7 +644,7 @@ a {
     .index__hero--title > div:first-child {
       border-bottom: 0.4rem solid var(--color-text-dark); }
     .index__hero--title > div:nth-child(2) {
-      font-size: 160%;
+      font-size: 140%;
       font-weight: 700;
       font-style: normal; }
     .index__hero--title > div:last-child {
