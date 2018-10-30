@@ -109,7 +109,11 @@ a {
   @media only screen and (max-width: 64em) {
     .sidebar {
       flex: 0 0 10rem;
-      overflow: hidden; } }
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 0.8rem; } }
 
 .content {
   width: 100%;
@@ -895,11 +899,7 @@ div#locations {
       margin: 6rem 15%; } }
   @media only screen and (max-width: 64em) {
     div#locations {
-      margin: 5rem 5%;
-      grid-template-columns: 1fr; } }
-  @media only screen and (max-width: 30em) {
-    div#locations {
-      margin: 5rem 5%;
+      margin: 5rem 10%;
       grid-template-columns: 1fr; } }
 
 .card {
@@ -921,7 +921,7 @@ div#locations {
       color: var(--color-text-primary);
       font-family: "Work Sans", sans-serif;
       text-transform: uppercase;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       letter-spacing: 0.4rem; }
     .card__container .btn {
@@ -980,7 +980,7 @@ div#locations {
 
 #gallery {
   padding-top: 2rem;
-  margin: 5rem 4% 0 4%;
+  margin: 5rem 8% 0 8%;
   display: grid;
   grid-column-gap: 3rem;
   grid-template-columns: repeat(4, 1fr);

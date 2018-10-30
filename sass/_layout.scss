@@ -78,6 +78,10 @@
     @media only screen and (max-width: $bp-medium) {
         flex: 0 0 10rem;
         overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 0.8rem;
     }
 }
 
