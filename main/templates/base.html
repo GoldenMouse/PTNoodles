@@ -16,8 +16,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
 
         <link rel="stylesheet"
-          href="{% static "js/vendor/animate.min.352.css" %}">
-        <link rel="stylesheet" href="{% static "js/vendor/aos.css" %}" />
+          href="{% static "css/vendor/animate.min.352.css" %}">
+        <link rel="stylesheet" href="{% static "css/vendor/aos.css" %}" />
         <!-- END VENDOR CSS -->
         
         <link rel="stylesheet" href="{% static "css/styles.css" %}">
@@ -227,14 +227,14 @@
         </div>
         
         <!---------------- SCRIPTS ------------>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="{% static "js/vendor/aos.js" %}"></script>
         <script>
             document.getElementById("content").addEventListener("scroll", function(){
                 AOS.init();
             });
         </script>
         
-        <script type="text/javascript" src="{% static "js/live.js" %}"></script>
+        <!--<script type="text/javascript" src="{% static "js/live.js" %}"></script> -->
         
         
         <script src="{% static "js/global.js" %}"></script>

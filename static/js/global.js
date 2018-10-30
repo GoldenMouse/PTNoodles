@@ -99,10 +99,10 @@ function resizeHeader() {
            mobileEmblem.style.height = "3.5rem";
            mobileNav.style.justifyContent = "flex-start";
         } else {
-           sidebar.style.transition =  "flex-basis 0.5s";
-           sidebar.style.flexBasis = "8rem";
+           sidebar.style.transition =  "flex-basis 0.2s";
+           sidebar.style.flexBasis = "6rem";
            mobileLogo.style.display = "block";
-           mobileEmblem.style.height = "5rem";
+           mobileEmblem.style.height = "4rem";
            mobileNav.style.justifyContent = "center";
         }
     }
