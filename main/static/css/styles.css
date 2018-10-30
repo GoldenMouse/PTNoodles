@@ -617,7 +617,7 @@ a {
     flex-direction: column;
     justify-content: center;
     width: 20rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--color-text-dark);
     background-color: rgba(236, 234, 221, 0.9);
     border: 0.4rem solid var(--color-text-dark);
@@ -639,7 +639,7 @@ a {
     .index__hero--title > div:first-child {
       border-bottom: 0.4rem solid var(--color-text-dark); }
     .index__hero--title > div:nth-child(2) {
-      font-size: 140%;
+      font-size: 160%;
       font-weight: 700;
       font-style: normal; }
     .index__hero--title > div:last-child {
