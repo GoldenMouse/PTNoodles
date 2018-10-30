@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <meta name="google" content="notranslate">
-
+        
         <!-- VENDOR CSS -->
         <link href="https://fonts.googleapis.com/css?family=Work+Sans:700,800" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
@@ -109,6 +109,12 @@
                     </li>
                 </ul>
             </nav>
+            
+            <!-- MOBILE FOOTER -->
+            <div class="footer__mobile">
+                <h4><a href="#" class="footer__mobile--btn">Call now to order</a></h4>
+            </div>
+            <!-- END MOBILE FOOTER --> 
         </div>
         
         <!-- END MOBILE NAVS -->
@@ -193,20 +199,18 @@
                 <!-- MOBILE HEADER -->
                 <div class="sidebar__mobile">
                     <div>
-                        <img 
-                            src="https://s3-us-west-2.amazonaws.com/mwee-images/pt-logo-emblem-only-white.png" 
-                            class="emblem__mobile"
-                        />
+                        <a href="{% url "index" %}">
+                            <img 
+                                src="https://s3-us-west-2.amazonaws.com/mwee-images/pt-logo-emblem-only-white.png" 
+                                class="emblem__mobile"
+                            />
+                        </a>
                     </div>
                     <div class="logo__mobile">PT Noodles</div>
                 </div>
                 <!-- END MOBILE HEADER -->
                 
-                <!-- MOBILE FOOTER -->
-                <div class="footer__mobile">
-                    <h4><a href="#" class="footer__mobile--btn">Call now to order</a></h4>
-                </div>
-                <!-- END MOBILE FOOTER -->
+               
 
                 <div class="footer">
                     <h4><a href="#">Call now to order</a></h4>
