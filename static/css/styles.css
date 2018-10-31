@@ -633,7 +633,7 @@ a {
     @media only screen and (max-width: 64em) {
       .index__hero--title {
         width: 8rem;
-        font-size: 0.8rem; } }
+        font-size: 1rem; } }
     .index__hero--title > div {
       text-transform: uppercase;
       text-align: center;
@@ -642,7 +642,7 @@ a {
     .index__hero--title > div:first-child {
       border-bottom: 0.4rem solid var(--color-text-dark); }
     .index__hero--title > div:nth-child(2) {
-      font-size: 160%;
+      font-size: 140%;
       font-weight: 700;
       font-style: normal; }
     .index__hero--title > div:last-child {
