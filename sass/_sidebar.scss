@@ -15,8 +15,7 @@
     box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.4);
     
     @media only screen and (max-width: $bp-medium) {
-        flex: 0 0 6rem;
-        overflow: hidden;
+        display: none;
     }
     
     &__desktop{
@@ -25,24 +24,102 @@
         &>* {
             margin-bottom: 2rem;
         }
-
-        @media only screen and (max-width: $bp-medium) {
-            display: none;
-        }
     }
+}
 
-    &__mobile {
-        display: none;
-                
-        @media only screen and (max-width: $bp-medium) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-right: 5rem;
+/** Hamburger **/
+.hamburger{
+    display: none;
+
+    
+    @media only screen and (max-width: $bp-medium) {
+        display: inline-block;
+        position: fixed;
+        top: 1rem;
+        right: 2rem;
+        cursor: pointer;
+        z-index: 3000;
+
+        &__bar1, 
+        &__bar2,
+        &__bar3 {
+            display: block;
+            width: 2.5rem;
+            height: 0.3rem;
+            background-color: var(--color-text-primary);
+            margin: 0.5rem auto;
+            transition: 0.4s 
         }
     }
 }
 
+
+/* Rotate first bar */
+.change .hamburger__bar1 {
+    -webkit-transform: translateY(0.8rem) rotateZ(45deg);
+   -moz-transform: translateY(0.8rem) rotateZ(45deg);
+   -ms-transform: translateY(0.8rem) rotateZ(45deg);
+   -o-transform: translateY(0.8rem) rotateZ(45deg);
+   transform: translateY(0.8rem) rotateZ(45deg);
+}
+
+/* Fade out the second bar */
+.change .hamburger__bar2  {
+    width: 0;
+}
+
+/* Rotate last bar */
+.change .hamburger__bar3 {
+    -webkit-transform: translateY(-0.8rem) rotateZ(-45deg);
+   -moz-transform: translateY(-0.8rem) rotateZ(-45deg);
+   -ms-transform: translateY(-0.8rem) rtateZ(-45deg);
+   -o-transform: translateY(-0.8rem) rotateZ(-45deg);
+   transform: translateY(-0.8rem) rotateZ(-45deg);
+}
+
+.sidebar__mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.4);
+            
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0;
+        padding-right: 4rem;
+        flex-basis: 6rem;
+    }
+}
+
+.nav-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    background-color: var(--color-bg-dark);
+    text-align: center;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.93,.12,.35,.87);
+   
+    & li {
+        padding: 0;
+        margin: 0;
+    }
+}
 
 .back-arrow {
     font-size: 3rem;
@@ -90,10 +167,8 @@
     margin: 2rem 0;
 
     &__mobile {
-        @media only screen and (max-width: $bp-medium) {
-            height: 4rem;
-            transition: height 0.2s;
-        }
+        height: 4rem;
+        transition: all 0.2s;
     }
     
     

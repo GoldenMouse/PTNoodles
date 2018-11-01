@@ -78,33 +78,32 @@ document.querySelector("#back-arrow--mobile").addEventListener("click", function
  * 
 ****/
 // When the user scrolls the page, execute animations
-document.getElementById("content").addEventListener("scroll", function(){
+window.addEventListener("scroll", function(){
     resizeHeader();
 });
 
-// Get the navbar
-var sidebar = document.querySelector(".sidebar");
-var mobileNav = document.querySelector(".sidebar__mobile");
-var mobileLogo = document.querySelector(".logo__mobile");
-var mobileEmblem = document.querySelector(".emblem__mobile");
-var content = document.getElementById("content");
-
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function resizeHeader() {
-    // check if element is visible
-    if (mobileNav.offsetParent !== null) {
-        if (content.scrollTop >= 100 ) {
-           sidebar.style.flexBasis = "5rem";
-           mobileLogo.style.display = "none";
-           mobileEmblem.style.height = "3.5rem";
-           mobileNav.style.justifyContent = "flex-start";
-        } else {
-           sidebar.style.transition =  "flex-basis 0.2s";
-           sidebar.style.flexBasis = "6rem";
-           mobileLogo.style.display = "block";
-           mobileEmblem.style.height = "4rem";
-           mobileNav.style.justifyContent = "center";
-        }
+    // Get the navbar
+    var sidebarMobile = document.querySelector(".sidebar__mobile");
+    var mobileNav = document.querySelector(".sidebar__mobile");
+    var mobileLogo = document.querySelector(".logo__mobile");
+    var mobileEmblem = document.querySelector(".emblem__mobile");
+    var content = document.getElementById("content");
+
+    if (window.scrollY >= 100 ) {
+       sidebarMobile.style.flexBasis = "5rem";
+       sidebarMobile.style.justifyContent= "flex-start";
+       sidebarMobile.style.paddingLeft= "1rem";
+       mobileLogo.style.display = "none";
+       mobileEmblem.style.height = "3.5rem";
+    } else {
+       sidebarMobile.style.transition =  "flex-basis 0.2s";
+       sidebarMobile.style.justifyContent= "center";
+       sidebarMobile.style.flexBasis = "6rem";
+       sidebarMobile.style.paddingLeft= "0";
+       mobileLogo.style.display = "block";
+       mobileEmblem.style.height = "4rem";
     }
 }
 
@@ -134,5 +133,4 @@ footer_btn.addEventListener("click", function(){
 callnow_close_btn.addEventListener("click", function(){
     callnow_close();
 });
-
 

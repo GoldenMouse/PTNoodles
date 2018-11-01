@@ -205,5 +205,14 @@
 
         
 {% block scripts %}
+    <script src="{% static "js/vendor/aos.js" %}"></script>
+    <script>
+        document.getElementById("content").addEventListener("scroll", function(){
+            AOS.init();
+        });
+        window.addEventListener("scroll", function(){
+            AOS.init();
+        });
+    </script>
     <script src="{% static "js/locations.js" %}"></script>
 {% endblock %}

@@ -63,72 +63,89 @@
         </div>
         {% block modal %}{% endblock %}
         
-        <!-- MOBILE NAVS -->
+        <!-- HAMBURGER -->
         <div class="hamburger">
             <div class="hamburger__bar1"></div>
             <div class="hamburger__bar2"></div>
             <div class="hamburger__bar3"></div>
         </div>
         
-        <div class="nav-mobile navs">
+        <!-- MOBILE HEADER -->
+            <div class="sidebar__mobile">
+                <div>
+                    <a href="{% url "index" %}">
+                        <img 
+                            src="https://s3-us-west-2.amazonaws.com/mwee-images/pt-logo-emblem-only-white.png" 
+                            class="emblem__mobile"
+                        />
+                    </a>
+                </div>
+                <div class="logo__mobile">
+                    <a href="{% url "index" %}">
+                        PT Noodles
+                    </a>
+                </div>
+            </div>
+            <!-- END MOBILE HEADER -->
+            
             <!-- MOBILE MAIN NAVS -->
-            <nav id="nav-mobile--main">
-                <ul>
-                    <li><a href="{% url "index" %}">home</a></li>
-                    <li><a href="{% url "locations" %}">locations</a></li>
-                    <li><a href="#" id="mobile__links--menus">menus</a></li>
-                    <li><a href="{% url "gallery" %}">gallery</a></li>
-                    <li><a href="{% url "contact" %}">contact</a></li>
-                </ul>
-                
-                <div class="social">
+            <div class="nav-mobile navs">
+                <nav id="nav-mobile--main">
                     <ul>
+                        <li><a href="{% url "index" %}">home</a></li>
+                        <li><a href="{% url "locations" %}">locations</a></li>
+                        <li><a href="#" id="mobile__links--menus">menus</a></li>
+                        <li><a href="{% url "gallery" %}">gallery</a></li>
+                        <li><a href="{% url "contact" %}">contact</a></li>
+                    </ul>
+                    
+                    <div class="social">
+                        <ul>
+                            <li>
+                                <a href="{% url "locations" %}#locations" >
+                                    <i class="fab fa-facebook-f circular"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url "locations" %}#locations"><i class="fab fa-yelp circular"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/pt.noodles" target="_blank"><i class="fab fa-instagram circular"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/realptnoodles" target="_blank"><i class="fab fa-twitter circular"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <!-- MOBILE MENU NAVS -->
+                <nav class="navs--menus hidden" id="nav-mobile--menus">
+                    <h2 class="navs--menus__heading">Menus</h2>
+                    <ul>
+                        <li><a href="{% url 'menus' location="avondale" %}">Avondale</a></li>
+                        <li><a href="{% url 'menus' location="surprise" %}">Surprise</a></li>
+                        <li><a href="{% url 'menus' location="goodyear" %}">Goodyear</a></li>
                         <li>
-                            <a href="{% url "locations" %}#locations" >
-                                <i class="fab fa-facebook-f circular"></i>
+                            <a href="{% url 'menus' location="phoenix" %}">
+                                Phoenix
+                                <span class="tag">New</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{% url "locations" %}#locations"><i class="fab fa-yelp circular"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/pt.noodles" target="_blank"><i class="fab fa-instagram circular"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/realptnoodles" target="_blank"><i class="fab fa-twitter circular"></i></a>
+                            <a href="#">
+                                <i class="far fa-arrow-alt-circle-left back-arrow" id="back-arrow--mobile"></i>
+                            </a>
                         </li>
                     </ul>
+                </nav>
+                
+                <!-- MOBILE FOOTER -->
+                <div class="footer__mobile">
+                    <h4><a href="#" class="footer__mobile--btn">Call now to order</a></h4>
                 </div>
-            </nav>
-            
-            <!-- MOBILE MENU NAVS -->
-            <nav class="navs--menus hidden" id="nav-mobile--menus">
-                <h2 class="navs--menus__heading">Menus</h2>
-                <ul>
-                    <li><a href="{% url 'menus' location="avondale" %}">Avondale</a></li>
-                    <li><a href="{% url 'menus' location="surprise" %}">Surprise</a></li>
-                    <li><a href="{% url 'menus' location="goodyear" %}">Goodyear</a></li>
-                    <li>
-                        <a href="{% url 'menus' location="phoenix" %}">
-                            Phoenix
-                            <span class="tag">New</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="far fa-arrow-alt-circle-left back-arrow" id="back-arrow--mobile"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            
-            <!-- MOBILE FOOTER -->
-            <div class="footer__mobile">
-                <h4><a href="#" class="footer__mobile--btn">Call now to order</a></h4>
+                <!-- END MOBILE FOOTER --> 
             </div>
-            <!-- END MOBILE FOOTER --> 
-        </div>
-        
         <!-- END MOBILE NAVS -->
         
         <div class="container">
@@ -152,14 +169,6 @@
                             />
                         </a>
                     </div>
-
-                    <!--
-                    <div class="contact-info">
-                        <div class="contact-info__addr">
-                            Now serving 5 locations in Arizona!
-                        </div>
-                    </div>
-                    -->
 
                     <nav class="navs" id="main-navs">
                         <ul>
@@ -208,24 +217,7 @@
                             </li>
                         </ul>
                     </nav>
-
                 </div>
-
-                <!-- MOBILE HEADER -->
-                <div class="sidebar__mobile">
-                    <div>
-                        <a href="{% url "index" %}">
-                            <img 
-                                src="https://s3-us-west-2.amazonaws.com/mwee-images/pt-logo-emblem-only-white.png" 
-                                class="emblem__mobile"
-                            />
-                        </a>
-                    </div>
-                    <div class="logo__mobile">PT Noodles</div>
-                </div>
-                <!-- END MOBILE HEADER -->
-                
-               
 
                 <div class="footer">
                     <h4><a href="#">Call now to order</a></h4>
@@ -242,17 +234,9 @@
         </div>
         
         <!---------------- SCRIPTS ------------>
-        <script src="{% static "js/vendor/aos.js" %}"></script>
-        <script>
-            document.getElementById("content").addEventListener("scroll", function(){
-                AOS.init();
-            });
-        </script>
-        
         <!--<script type="text/javascript" src="{% static "js/live.js" %}"></script> -->
         
         
-        <script src="{% static "js/vendor/hideaddressbaronscroll.js" %}"></script>
         <script src="{% static "js/global.js" %}"></script>
         {% block scripts %}{% endblock %}
         <!--------- END SCRIPTS --------------->

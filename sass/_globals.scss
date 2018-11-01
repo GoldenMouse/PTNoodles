@@ -4,59 +4,6 @@
     overflow: hidden;
 }
 
-
-
-/** Hamburger **/
-.hamburger{
-    display: none;
-
-    
-    @media only screen and (max-width: $bp-medium) {
-        display: inline-block;
-        position: fixed;
-        top: 1rem;
-        right: 2rem;
-        cursor: pointer;
-        z-index: 3000;
-
-        &__bar1, 
-        &__bar2,
-        &__bar3 {
-            display: block;
-            width: 2.5rem;
-            height: 0.3rem;
-            background-color: var(--color-text-primary);
-            margin: 0.5rem auto;
-            transition: 0.4s 
-        }
-    }
-}
-
-
-/* Rotate first bar */
-.change .hamburger__bar1 {
-    -webkit-transform: translateY(0.8rem) rotateZ(45deg);
-   -moz-transform: translateY(0.8rem) rotateZ(45deg);
-   -ms-transform: translateY(0.8rem) rotateZ(45deg);
-   -o-transform: translateY(0.8rem) rotateZ(45deg);
-   transform: translateY(0.8rem) rotateZ(45deg);
-}
-
-/* Fade out the second bar */
-.change .hamburger__bar2  {
-    width: 0;
-}
-
-/* Rotate last bar */
-.change .hamburger__bar3 {
-    -webkit-transform: translateY(-0.8rem) rotateZ(-45deg);
-   -moz-transform: translateY(-0.8rem) rotateZ(-45deg);
-   -ms-transform: translateY(-0.8rem) rtateZ(-45deg);
-   -o-transform: translateY(-0.8rem) rotateZ(-45deg);
-   transform: translateY(-0.8rem) rotateZ(-45deg);
-}
-
-
 .slider {
     position: relative;
     flex: 1;
@@ -278,6 +225,7 @@
     align-items: center;
     justify-content: center;
     max-height: 0; // important so that it hides the element
+    height: 100vh;
     position: fixed;
     z-index: 5000;
     bottom: 0;
@@ -289,8 +237,6 @@
     transition-property: all;
     transition-duration: .4s;
     transition-timing-function: cubic-bezier(.93,.12,.35,.87); 
-    //margin-bottom: 4.5rem;
-    height: 100vh;
     
     @media only screen and (max-width: $bp-medium) {
         width: 100%;
