@@ -1216,10 +1216,12 @@ div#locations {
       color: var(--color-bg-primary) !important; }
 
 .contactus__submitted {
-  margin: 3rem;
   text-align: center;
-  position: relative;
-  top: 20%; }
+  margin: auto 5%; }
+  @media only screen and (max-width: 64em) {
+    .contactus__submitted {
+      padding-top: 30%;
+      height: 100vh; } }
   .contactus__submitted--title {
     font-size: 2rem;
     color: var(--color-text-dark); }
