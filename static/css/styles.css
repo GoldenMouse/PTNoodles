@@ -318,6 +318,9 @@ a {
     width: 10rem;
     background-color: var(--color-bg-primary);
     color: var(--color-bg-rose); }
+  .callnow--card__item div:nth-child(2) {
+    color: var(--color-bg-primary);
+    background-color: var(--color-bg-rose); }
   .callnow--card__item div:nth-child(3) {
     background-color: var(--color-bg-primary);
     color: var(--color-bg-rose);

@@ -276,6 +276,8 @@
         color: var(--color-bg-rose);
     }
     & div:nth-child(2) {
+        color: var(--color-bg-primary);
+        background-color: var(--color-bg-rose);
     }
     & div:nth-child(3) {
         background-color: var(--color-bg-primary);

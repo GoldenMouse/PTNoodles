@@ -6,12 +6,14 @@ function openNav() {
     document.querySelector(".nav-mobile").style.maxHeight = "100vh";
     document.querySelector(".hamburger").removeEventListener("click", openNav);
     document.querySelector(".hamburger").addEventListener("click", closeNav);
+    document.querySelector("body").style.overflow = "hidden";
 }
 
 function closeNav() {
     document.querySelector(".nav-mobile").style.maxHeight = "0";
     document.querySelector(".hamburger").removeEventListener("click", closeNav);
     document.querySelector(".hamburger").addEventListener("click", openNav);
+    document.querySelector("body").style.overflow = "visible";
 }
 
 var hamburger = document.querySelector(".hamburger");
