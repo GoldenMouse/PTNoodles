@@ -52,6 +52,13 @@ div#locations {
             font-size: 2rem;
             font-weight: 700;
             letter-spacing: 0.4rem;
+            padding: 0.5rem;
+            
+            &.pretitle {
+                padding: 0.5rem 1rem;
+                margin: 0;
+                border-bottom: 2px solid var(--color-bg-primary);
+            }
         }
         
         & .btn {
@@ -92,7 +99,7 @@ div#locations {
     }
 }
 
-.card#phoenix {
+.card#phoenix-camelback {
     grid-row: 1 / 2 ;
     
     @media only screen and (max-width: $bp-small) {

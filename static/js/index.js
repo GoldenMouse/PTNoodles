@@ -20,3 +20,15 @@ function showDivs(n) {
 }
 
 ***/
+
+/*** Notitfication bar***/
+
+document.querySelector("#notification-bar .close").addEventListener("click", () => {
+    document.querySelector("#notification-bar").style.display = "none";
+    sessionStorage.noteShownNewLocations = true;
+})
+
+
+if(sessionStorage.noteShownNewLocations) {
+    document.querySelector("#notification-bar").style.display = "none";
+}

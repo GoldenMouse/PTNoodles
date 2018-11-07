@@ -28,6 +28,15 @@
     </div>
 </div>
 -->
+
+<!-- Notification bar -->
+{% if not alertShown %}
+<div id="notification-bar">
+    <h3>We have <a href="{% url 'locations' %}#phoenix-7th">two new locations</a> opening in Phoenix, AZ. Stay tuned!</h3>    
+    <a class="close"><i class="fas fa-times"></i></a>
+</div>
+{% endif %}
+
 <div id="index">
     <div class="index__hero">
         <div class="index__hero--img">

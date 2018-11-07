@@ -18,7 +18,11 @@ def play(request):
     return render(request, "play.html", {})
     
 def index(request):
-    return render(request, "index.html", {})
+    alertShown = request.session.get('showAlert', False)
+    if not alertShown:
+        request.session['alertShown'] = True;
+        
+    return render(request, "index.html", { 'alertShown': alertShown })
     
 def menus(request, location):
     context = { 'location': location }
