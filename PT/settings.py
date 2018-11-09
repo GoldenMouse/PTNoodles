@@ -125,7 +125,7 @@ CSRF_COOKIE_SECURE = True
 DEBUG = False
 X_FRAME_OPTIONS = 'DENY'
 ALLOWED_HOSTS = ['www.ptnoodles.com', 'ptnoodles.com']
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 #########################################################################
@@ -137,8 +137,7 @@ try:
   from . import local_settings
 except ImportError as e:
   print(e)
-  import sys 
-  sys.exit(1)
+  pass
 else:
   # Import any symbols that begin with A-Z. Append to lists any symbols that
   # begin with "EXTRA_".
