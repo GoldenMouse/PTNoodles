@@ -22,6 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'main',
     'django.contrib.admin',
@@ -114,10 +115,9 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-
-
 ### DEPLOYMENT SETTINGS #####
 #SECURE_SSL_REDIRECT = True
+ADMIN_ENABLED = False
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SESSION_COOKIE_SECURE = True
@@ -125,6 +125,32 @@ CSRF_COOKIE_SECURE = True
 DEBUG = False
 X_FRAME_OPTIONS = 'DENY'
 ALLOWED_HOSTS = ['www.ptnoodles.com', 'ptnoodles.com']
-#ALLOWED_HOSTS = ['*']
 SECRET_KEY = os.environ['SECRET_KEY']
-#SECRET_KEY = 'un6)a)#5ymbzbn1(*jzq0y%yvti@#nj#t5oh*ppk1l^0o)bh5e'
+
+
+#########################################################################
+# Import settings from local_settings.py, if it exists.
+#
+# Put this at the end of settings.py
+
+try:
+  from . import local_settings
+except ImportError as e:
+  print(e)
+  import sys 
+  sys.exit(1)
+else:
+  # Import any symbols that begin with A-Z. Append to lists any symbols that
+  # begin with "EXTRA_".
+  import re
+  for attr in dir(local_settings):
+    match = re.search('^EXTRA_(\w+)', attr)
+    if match:
+      name = match.group(1)
+      value = getattr(local_settings, attr)
+      try:
+        globals()[name] += value
+      except KeyError:
+        globals()[name] = value
+    elif re.search('^[A-Z]', attr):
+        globals()[attr] = getattr(local_settings, attr)
