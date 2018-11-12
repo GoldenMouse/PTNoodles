@@ -126,6 +126,7 @@ DEBUG = False
 X_FRAME_OPTIONS = 'DENY'
 ALLOWED_HOSTS = ['www.ptnoodles.com', 'ptnoodles.com']
 SECRET_KEY = os.environ.get('SECRET_KEY')
+PREPEND_WWW = True
 
 
 #########################################################################
